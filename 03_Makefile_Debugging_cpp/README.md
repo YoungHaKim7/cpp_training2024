@@ -1,7 +1,7 @@
 # Cpp Makefile(macOS)
 
 ```bash
-echo "r:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
+echo "r:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
 echo "\x09\x09./out/main\xa" >> Makefile &&
 
 echo "b:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
