@@ -1,3 +1,8 @@
+<p align="center">
+  <img width=140px src="https://github.com/YoungHaKim7/Cpp_Training/assets/67513038/02580529-b8e2-4aa9-b80e-dd1f56a08491" />
+</p>
+
+
 # vim tab setting
 
 ```
