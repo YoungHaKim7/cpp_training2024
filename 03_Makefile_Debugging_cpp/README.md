@@ -272,3 +272,8 @@ user@host:~$ xxd-rs dump Cargo.toml
 ...
 ...
 ```
+# Result
+
+```
+
+```

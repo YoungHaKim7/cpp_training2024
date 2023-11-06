@@ -13,9 +13,9 @@ ll:
 		rm -rf out
 		mkdir out
 		cp -rf ./src/main.cpp ./.
-		clang++ -S -emit-llvm -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -L /usr/lib/gcc/x86_64-linux-gnu/11 main.cpp
+		clang++ -S -emit-llvm main.cpp
 		mv *.ll ./out/.
-		clang++ -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -L /usr/lib/gcc/x86_64-linux-gnu/11 main.cpp
+		clang++ main.cpp
 		mv *.out ./out/.
 		rm -rf *.out
 
