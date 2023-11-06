@@ -117,13 +117,41 @@ https://askubuntu.com/questions/1449769/clang-cannot-find-iostream
   - https://gcc.gnu.org/legacy-ml/gcc-patches/2013-11/msg01874.html
   - http://gavinchou.github.io/experience/summary/syntax/gcc-address-sanitizer/
 
-# Result
+- xxd dump(러스트로 만든 xxd 괜찮다. ㅎ
+  - https://github.com/Nicoretti/xxd-rs
+  - Usage
+
+```
+xxd-rs dump -f Hex Cargo.toml
+```
+```
+USAGE:
+    xxd-rs [OPTIONS] [SUBCOMMAND]
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -l, --length <length>          Amount of bytes which shall be read
+    -o, --output-file <outfile>    File to which the output will be written (default: stdout)
+    -s, --seek <seek>              Offset in the file where to start reading
+
+SUBCOMMANDS:
+    dump        Dumps an input file in the appropriate output format
+    generate    Generates a source file containing the specified file as array
+    help        Prints this message or the help of the given subcommand(s)
 
 ```
 
+- hex dump
 ```
-# Result
-
-```
-
+user@host:~$ xxd-rs dump Cargo.toml
+00000000: 5b70 6163 6b61 6765 5d0a 6e61 6d65 203d  [package].name =
+00000010: 2022 7878 642d 7273 220a 6465 7363 7269   "xxd-rs".descri
+00000020: 7074 696f 6e20 3d20 2241 2072 7573 7420  ption = "A rust
+00000030: 636c 6f6e 6520 6f66 2078 7864 220a 7265  clone of xxd".re
+...
+...
+...
 ```
