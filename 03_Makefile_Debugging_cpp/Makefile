@@ -53,6 +53,12 @@ obj:
 		mv *.o ./out
 		objdump --disassemble -S -C ./out/main.o
 
+xx:
+		rm -rf out
+		mkdir out
+		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
+		xxd -c 16 ./out/main
+
 clean:
 		rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM
 
