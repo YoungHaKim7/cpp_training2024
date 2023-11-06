@@ -1,7 +1,7 @@
 r:
 		rm -rf out
 		mkdir out
-		g++ -pthread -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
+		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
 		./out/main
 
 b:
@@ -54,12 +54,12 @@ obj:
 		objdump --disassemble -S -C ./out/main.o
 
 clean:
-		rm -rf ./out *.out
+		rm -rf ./out *.out ./src/*.out
 
 init:
 		mkdir src
 		echo "#include <iostream>" >> src/main.cpp
-
+		echo "" >> src/main.cpp
 		echo "int main(int argc, char **argv) {" >> src/main.cpp
 		echo "	std::cout<< \"Hello C++ \" << std::endl;" >> src/main.cpp
 		echo "	return 0;" >> src/main.cpp

@@ -117,3 +117,8 @@ https://askubuntu.com/questions/1449769/clang-cannot-find-iostream
   - https://gcc.gnu.org/legacy-ml/gcc-patches/2013-11/msg01874.html
   - http://gavinchou.github.io/experience/summary/syntax/gcc-address-sanitizer/
 
+# Result
+
+```
+
+```
