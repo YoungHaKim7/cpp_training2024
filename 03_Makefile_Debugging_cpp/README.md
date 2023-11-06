@@ -47,6 +47,11 @@ echo "\x09\x09mv *.o ./out" >> Makefile &&
 echo "\x09\x09objdump --disassemble -S -C ./out/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
+echo "xx:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
+echo "\x09\x09xxd-rs dump -f Hex ./out/main" >> Makefile &&
+echo "" >> Makefile &&
+
 echo "clean:" >> Makefile &&
 echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
 echo "" >> Makefile &&
