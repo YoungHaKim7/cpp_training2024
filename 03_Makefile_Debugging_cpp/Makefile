@@ -54,7 +54,7 @@ obj:
 		objdump --disassemble -S -C ./out/main.o
 
 clean:
-		rm -rf ./out *.out ./src/*.out
+		rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM
 
 init:
 		mkdir src

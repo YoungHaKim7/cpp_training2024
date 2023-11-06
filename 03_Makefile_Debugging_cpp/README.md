@@ -48,7 +48,7 @@ echo "\x09\x09objdump --disassemble -S -C ./out/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf ./out *.out ./src/*.out" >> Makefile &&
+echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 echo "init:\xa\x09\x09mkdir src" >> Makefile &&
 echo "\x09\x09echo \x22#include <iostream>\x22 >> src/main.cpp" >> Makefile &&
@@ -117,6 +117,11 @@ https://askubuntu.com/questions/1449769/clang-cannot-find-iostream
   - https://gcc.gnu.org/legacy-ml/gcc-patches/2013-11/msg01874.html
   - http://gavinchou.github.io/experience/summary/syntax/gcc-address-sanitizer/
 
+# Result
+
+```
+
+```
 # Result
 
 ```
