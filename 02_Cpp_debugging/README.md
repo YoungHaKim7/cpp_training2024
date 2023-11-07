@@ -43,14 +43,14 @@
         {
             "type": "cppbuild",
             "label": "C/C++: clang build active file",
-            "command": "/opt/homebrew/opt/llvm/bin/clang",
+            "command": "/home/gy/Utilities/llvm16_0_4/bin/g++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/out/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -67,6 +67,7 @@
     ],
     "version": "2.0.0"
 }
+
 ```
 
 
