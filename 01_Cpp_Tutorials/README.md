@@ -7,6 +7,13 @@ https://en.cppreference.com/w/
 - https://en.cppreference.com/w/cpp/language
 - https://en.cppreference.com/w/cpp/header
 - https://en.cppreference.com/w/cpp
+  - c버젼별 정리
+    - https://en.cppreference.com/w/cpp/11
+    - https://en.cppreference.com/w/cpp/14
+    - https://en.cppreference.com/w/cpp/17
+    - c++20 https://en.cppreference.com/w/cpp/20
+    - c++23 https://en.cppreference.com/w/cpp/23
+    - c++26 https://en.cppreference.com/w/cpp/26
 
 ## c reference
 - https://en.cppreference.com/w/c
