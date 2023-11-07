@@ -66,7 +66,7 @@ xx:
 		xxd -c 16 ./out/main
 
 clean:
-		rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM
+		rm -rf ./out *.out ./src/*.out ./src/out/ ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM
 
 init:
 		mkdir src

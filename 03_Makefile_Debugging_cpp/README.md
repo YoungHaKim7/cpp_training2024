@@ -56,7 +56,7 @@ echo "\x09\x09xxd -c 16 ./out/main" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
+echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/out/ ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 echo "init:\xa\x09\x09mkdir src" >> Makefile &&
 echo "\x09\x09echo \x22#include <iostream>\x22 >> src/main.cpp" >> Makefile &&
@@ -170,8 +170,9 @@ echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o
 echo "\x09\x09xxd -c 16 ./out/main" >> Makefile &&
 echo "" >> Makefile &&
 
+
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
+echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/out/ ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 echo "init:\xa\x09\x09mkdir src" >> Makefile &&
 echo "\x09\x09echo \x22#include <iostream>\x22 >> src/main.cpp" >> Makefile &&
@@ -280,6 +281,11 @@ user@host:~$ xxd-rs dump Cargo.toml
 ```
 
 - xxd 사용법 https://twpower.github.io/122-xxd-command-usage
+# Result
+
+```
+
+```
 # Result
 
 ```
