@@ -10,20 +10,21 @@
             "name": "Launch",
             "program": "${workspaceFolder}/out/${fileBasenameNoExtension}",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            // "preLaunchTask": "C/C++: clang build active file"
         },
         {
             "name": "gcc - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${fileDirname}/out/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++ gcc build active file"
+            // "preLaunchTask": "C/C++: clang build active file"
         }
     ]
 }

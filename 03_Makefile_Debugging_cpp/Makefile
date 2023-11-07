@@ -1,7 +1,13 @@
 r:
 		rm -rf out
 		mkdir out
-		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
+		g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
+		./out/main
+
+zr:
+		rm -rf out
+		mkdir out
+		zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
 		./out/main
 
 b:
