@@ -5,6 +5,7 @@
             "label": "C/C++: clang build active file",
             "command": "/home/gy/Utilities/llvm16_0_4/bin/g++",
             "args": [
+                "-c",
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",

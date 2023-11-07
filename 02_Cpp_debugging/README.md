@@ -15,7 +15,8 @@
             "name": "Launch",
             "program": "${workspaceFolder}/out/${fileBasenameNoExtension}",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            // "preLaunchTask": "C/C++: clang build active file"
         },
         {
             "name": "gcc - Build and debug active file",
@@ -28,7 +29,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++ gcc build active file"
+            // "preLaunchTask": "C/C++: clang build active file"
         }
     ]
 }
@@ -38,7 +39,6 @@
 - tasks.json
 
 ```json
-
 {
     "tasks": [
         {
@@ -46,6 +46,7 @@
             "label": "C/C++: clang build active file",
             "command": "/home/gy/Utilities/llvm16_0_4/bin/g++",
             "args": [
+                "-c",
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
