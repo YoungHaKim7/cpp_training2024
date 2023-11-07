@@ -1,3 +1,18 @@
+# std 공부 
+https://gcc.gnu.org/onlinedocs/libstdc++/manual/io.html#std.io.objects
+
+# c++ Reference
+https://en.cppreference.com/w/
+
+- https://en.cppreference.com/w/cpp/language
+- https://en.cppreference.com/w/cpp/header
+- https://en.cppreference.com/w/cpp
+
+## c reference
+- https://en.cppreference.com/w/c
+
+<hr>
+
 # 31(hr) C++ Programming Course - Beginner to Advanced | freeCodeCamp.org
 - Learn modern C++ 20 programming in this comprehensive course.
   - https://youtu.be/8jLOx1hD3_o
