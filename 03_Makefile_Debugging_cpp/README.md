@@ -56,7 +56,7 @@ echo "\x09\x09xxd -c 16 ./out/main" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/out/ ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM" >> Makefile &&
+echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "init:\xa\x09\x09mkdir src" >> Makefile &&
