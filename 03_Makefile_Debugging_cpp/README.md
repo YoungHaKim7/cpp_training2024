@@ -125,7 +125,7 @@ echo "\x09\x09echo \x22\x09\x09\x09\\\"options\\\": {\x22 >> .vscode/tasks.json"
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"cwd": "\\\x24{fileDirname}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09},\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"problemMatcher\\\": [\x22 >> .vscode/tasks.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"$gcc\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\\\x24gcc\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09],\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"group\\\": {\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"kind\\\": \\\"build\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
