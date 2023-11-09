@@ -76,6 +76,34 @@ echo "\x09\x09echo \x22\x09std::cout<< \\\"Hello C++ \\\" << std::endl;\x22 >> s
 echo "\x09\x09echo \x22\x09return 0;\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22}\x22 >> src/main.cpp" >> Makefile &&
 
+echo "vscode:\xa\x09\x09mkdir .vscode" >> Makefile && 
+echo "\x09\x09echo \x22{\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\\\"version\\\": \\\"0.2.0\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\\\"configurations\\\": [\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"lldb\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": \\\"launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"Launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"${workspaceFolder}/out/${fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"${workspaceFolder}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09},\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09{\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\\\"name\\\": \\\"gcc - Build and debug active file\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\\\"type\\\": \\\"cppdbg\\\",,\x22 >> .vscode/launch.json" >> Makefile &&
+            "request": "launch",
+            "program": "${fileDirname}/out/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            // "preLaunchTask": "C/C++: clang build active file"
+        }
+    ]
+}
+
 echo "# Result\xa\xa\x60\x60\x60\xa\xa\x60\x60\x60" >> README.md &&
 
 echo "# A collection of useful .gitignore templates " >> .gitignore &&
