@@ -122,7 +122,7 @@ echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-o\\\",\x22 >> .vscode/tasks.json" >>
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\\\x24{fileDirname}/out/\\\x24{fileBasenameNoExtension}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09],\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"options\\\": {\x22 >> .vscode/tasks.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\x63\x77\x64\\\": "\\\x24{fileDirname}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"cwd\\\": \\\"\\\x24{fileDirname}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
 
 
 echo "# Result\xa\xa\x60\x60\x60\xa\xa\x60\x60\x60" >> README.md &&
