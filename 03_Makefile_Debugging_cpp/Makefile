@@ -66,9 +66,17 @@ xx:
 		xxd -c 16 ./out/main
 
 clean:
-		rm -rf ./out *.out ./src/*.out ./src/out/ ./src/*.dSYM ./src/a.dSYM ./src/main.dSYM main.dSYM a.dSYM
+		rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM
 
 init:
+		mkdir src
+		echo "#include <iostream>" >> src/main.cpp
+		echo "" >> src/main.cpp
+		echo "int main() {" >> src/main.cpp
+		echo "	return 0;" >> src/main.cpp
+		echo "}" >> src/main.cpp
+
+init2:
 		mkdir src
 		echo "#include <iostream>" >> src/main.cpp
 		echo "" >> src/main.cpp
