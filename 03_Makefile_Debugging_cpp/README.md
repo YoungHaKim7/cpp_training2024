@@ -290,13 +290,5 @@ user@host:~$ xxd-rs dump Cargo.toml
 ```
 
 - xxd 사용법 https://twpower.github.io/122-xxd-command-usage
-# Result
 
-```
 
-```
-# Result
-
-```
-
-```
