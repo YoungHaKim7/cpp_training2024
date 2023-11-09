@@ -189,6 +189,15 @@ echo "*.app\xa" >> .gitignore
 
 # Cpp Makefile(LinuxOS)
 
+- \ 이거 제거 못하겠다. ㅠㅠ(빔 활용해서 하자 여기까지 ㅠㅠ)
+```
+// 안 물어보고 \ 이거 다 지워줌 
+%s/\\//g
+
+// 물어보고 
+%s/\\//gc
+```
+
 ```bash
 echo "r:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
 echo "\x09\x09./out/main\xa" >> Makefile &&
