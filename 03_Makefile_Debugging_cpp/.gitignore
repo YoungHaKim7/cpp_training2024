@@ -6,6 +6,7 @@
 dir/otherdir/.DS_Store
 
 out/
+.vscode/
 a.out.dSYM/
 
 # Prerequisites
