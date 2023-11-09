@@ -88,21 +88,21 @@ echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"${workspaceFolder}/out/$
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"${workspaceFolder}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09},\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09{\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\\\"name\\\": \\\"gcc - Build and debug active file\\\",\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\\\"type\\\": \\\"cppdbg\\\",,\x22 >> .vscode/launch.json" >> Makefile &&
-            "request": "launch",
-            "program": "${fileDirname}/out/${fileBasenameNoExtension}",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            // "preLaunchTask": "C/C++: clang build active file"
-        }
-    ]
-}
+echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"gcc - Build and debug active file\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"cppdbg\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": "launch",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"${fileDirname}/out/${fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"stopAtEntry\\\": false,\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"${fileDirname}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"environment\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"externalConsole\\\": false,\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"MIMode\\\": \\\"lldb\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09// \\\"preLaunchTask\\\": \\\"C/C++: clang build active file\\\"\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09}\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\]\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\}\x22 >> .vscode/launch.json" >> Makefile &&
 
 echo "# Result\xa\xa\x60\x60\x60\xa\xa\x60\x60\x60" >> README.md &&
 
