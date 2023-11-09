@@ -432,3 +432,6 @@ user@host:~$ xxd-rs dump Cargo.toml
 - xxd 사용법 https://twpower.github.io/122-xxd-command-usage
 
 
+
+- 달러 escape는 달러 2개 였다. ㄱㄱ
+  - https://stackoverflow.com/questions/33873789/how-to-escape-double-dollars-in-a-makefile
