@@ -133,7 +133,7 @@ vscode:
 		echo "			\"options\": {" >> .vscode/tasks.json
 		echo "				\"cwd\": \"$$\{fileDirname}\"" >> .vscode/tasks.json
 		echo "			}," >> .vscode/tasks.json
-		echo "				\"problemMatcher\": [" >> .vscode/tasks.json
+		echo "			\"problemMatcher\": [" >> .vscode/tasks.json
 		echo "				\"$$\gcc\"" >> .vscode/tasks.json
 		echo "			]," >> .vscode/tasks.json
 		echo "			\"group\": {" >> .vscode/tasks.json
