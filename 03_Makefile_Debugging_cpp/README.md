@@ -196,6 +196,12 @@ echo "*.app\xa" >> .gitignore
 
 // 물어보고 
 %s/\\//gc
+
+std::endl; 이거 보다
+'\n';
+이걸 쓰도로 하자 endl구현 된 코드가 너무 길어서 최적화에 안좋다.
+'\n'; 이게 슈퍼 갑 
+
 ```
 
 ```bash
@@ -261,7 +267,7 @@ echo "init:\xa\x09\x09mkdir src" >> Makefile &&
 echo "\x09\x09echo \x22#include <iostream>\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22int main() {\x22 >> src/main.cpp" >> Makefile &&
-echo "\x09\x09echo \x22\x09std::cout<< \\\"Hello C++ \\\" << '\\$ n';\x22 >> src/main.cpp" >> Makefile &&
+echo "\x09\x09echo \x22\x09std::cout<< \\\"Hello C++ \\\" << std::endl;\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22\x09return 0;\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22}\x22 >> src/main.cpp" >> Makefile &&
 echo "" >> Makefile &&
