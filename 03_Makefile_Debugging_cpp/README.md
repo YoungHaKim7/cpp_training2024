@@ -274,7 +274,7 @@ echo "\x09\x09echo \x22\x09std::cout<< \\\"Hello C++ \\\" << std::endl;\x22 >> s
 echo "\x09\x09echo \x22\x09return 0;\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22}\x22 >> src/main.cpp" >> Makefile &&
 
-echo "vscode:\xa\x09\x09rm -rf mkdir\xa\x09\x09mkdir .vscode" >> Makefile && 
+echo "vscode:\xa\x09\x09rm -rf .vscode\xa\x09\x09mkdir .vscode" >> Makefile && 
 echo "\x09\x09echo \x22{\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\\\"version\\\": \\\"0.2.0\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\\\"configurations\\\": [\x22 >> .vscode/launch.json" >> Makefile &&
