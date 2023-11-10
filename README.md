@@ -19,6 +19,12 @@ set shiftwidth=2
 
 <hr>
 
+# 코딩의 근본 shellscript
+
+https://www.shellscript.sh/
+
+<hr>
+
 # C++ 라이브러리 찾는곳
 
 https://en.cppreference.com/w/cpp/links/libs
