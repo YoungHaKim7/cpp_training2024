@@ -86,7 +86,7 @@ init2:
 		echo "	return 0;" >> src/main.cpp
 		echo "}" >> src/main.cpp
 vscode:
-		rm -rf mkdir
+		rm -rf .vscode
 		mkdir .vscode
 		echo "{" >> .vscode/launch.json
 		echo "	\"version\": \"0.2.0\"," >> .vscode/launch.json
