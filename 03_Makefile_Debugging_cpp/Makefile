@@ -103,7 +103,7 @@ vscode:
 		echo "		{" >> .vscode/launch.json
 		echo "			\"name\": \"gcc - Build and debug active file\"," >> .vscode/launch.json
 		echo "			\"type\": \"cppdbg\"," >> .vscode/launch.json
-		echo "			\"request\": \"tasks\"," >> .vscode/launch.json
+		echo "			\"request\": \"launch\"," >> .vscode/launch.json
 		echo "			\"program\": \"$$\{fileDirname}/out/\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
 		echo "			\"stopAtEntry\": false," >> .vscode/launch.json
