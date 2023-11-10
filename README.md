@@ -23,6 +23,10 @@ set shiftwidth=2
 
 https://en.cppreference.com/w/cpp/links/libs
 
+- C++질문하고 답해주는 좋은 곳
+  - https://cplusplus.com/forum/beginner/
+
+
 # Generators, Coroutines and Other Brain Unrolling Sweetness - Adi Shavit - CppCon 2019
 
 https://youtu.be/qYHDERleSL8?si=iyod9wk7aMVcnk0r
