@@ -17,6 +17,12 @@ set shiftwidth=2
 - https://github.com/YoungHaKim7/cpp_training2024
 - https://github.com/YoungHaKim7/cpp23_project
 
+<hr>
+
+# C++ 라이브러리 찾는곳
+
+https://en.cppreference.com/w/cpp/links/libs
+
 # Generators, Coroutines and Other Brain Unrolling Sweetness - Adi Shavit - CppCon 2019
 
 https://youtu.be/qYHDERleSL8?si=iyod9wk7aMVcnk0r
