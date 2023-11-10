@@ -261,7 +261,7 @@ echo "init:\xa\x09\x09mkdir src" >> Makefile &&
 echo "\x09\x09echo \x22#include <iostream>\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22int main() {\x22 >> src/main.cpp" >> Makefile &&
-echo "\x09\x09echo \x22\x09std::cout<< \\\"Hello C++ \\\" << '$\\n';\x22 >> src/main.cpp" >> Makefile &&
+echo "\x09\x09echo \x22\x09std::cout<< \\\"Hello C++ \\\" << '\\$n';\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22\x09return 0;\x22 >> src/main.cpp" >> Makefile &&
 echo "\x09\x09echo \x22}\x22 >> src/main.cpp" >> Makefile &&
 echo "" >> Makefile &&
