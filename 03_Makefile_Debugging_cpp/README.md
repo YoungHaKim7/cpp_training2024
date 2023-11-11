@@ -47,8 +47,11 @@ echo "\x09\x09rm -rf *.out" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "as:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
-echo "\x09\x09cp -rf ./src/*.cpp ./target/." >> Makefile &&
 echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_ASSEMBLY) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "\x09\x09mv *.ii ./target" >> Makefile &&
+echo "\x09\x09mv *.o ./target" >> Makefile &&
+echo "\x09\x09mv *.s ./target" >> Makefile &&
+echo "\x09\x09mv *.bc ./target" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "fsan:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
@@ -58,8 +61,7 @@ echo "\x09\x09mv *.out ./target" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "mem:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
-echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
-echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_VALGRIND) -o \x24(TARGET)" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_VALGRIND) \x24(SOURCE_CXX) -o \x24(TARGET)" >> Makefile &&
 echo "\x09\x09valgrind --leak-check=full \x24(TARGET)" >> Makefile &&
 echo "" >> Makefile &&
 
