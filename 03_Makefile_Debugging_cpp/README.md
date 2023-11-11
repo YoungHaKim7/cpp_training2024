@@ -1,6 +1,6 @@
 # Link
 - <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#makefile">Makefile로 이동하기</a>
-- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore">echo로 .gitignore 넣기 이동</a>
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore-">echo로 .gitignore 넣기 이동</a>
 
 # Cpp Makefile(macOS)
 
@@ -496,7 +496,7 @@ user@host:~$ xxd-rs dump Cargo.toml
 
 <hr>
 
-<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore">echo로 .gitignore 넣기</a>
+<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore-">echo로 .gitignore 넣기</a>
 
 # Makefile<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">[🔝]</a>
 
