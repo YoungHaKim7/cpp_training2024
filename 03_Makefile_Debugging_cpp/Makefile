@@ -1,72 +1,93 @@
+C = gcc 
+CXX = clang++
+CXX_GPP = g++
+
+SOURCE_CXX = ./src/main.cpp
+SOURCE_CXX_OBJ = ./target/main.o
+
+TARGET = ./target/main
+LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb
+LDFLAGS_DEBUG = -c -std=c++2b -pthread -lm -Wall -Wextra -ggdb
+LDFLAGS_EMIT_LLVM = -S -emit-llvm
+LDFLAGS_ASSEMBLY = -Wall -save-temps
+LDFLAGS_FSANITIZE_ADDRESS = -O1 -g -fsanitize=address -fno-omit-frame-pointer -c
+LDFLAGS_FSANITIZE_OBJECT = -g -fsanitize=address
+LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b
+
+r3:
+		rm -rf target
+		mkdir target
+		$(C) -c $(SOURCE_C) -o $(OBJECTS_C)
+		$(CXX) $(SOURCE_CXX) $(OBJECTS_C) $(LDFLAGS_COMMON) -o $(TARGET)
+		$(TARGET)
+
 r:
-		rm -rf out
-		mkdir out
-		g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
-		./out/main
+		rm -rf target
+		mkdir target
+		g++ $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		$(TARGET)
 
 zr:
-		rm -rf out
-		mkdir out
-		zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
-		./out/main
+		rm -rf target
+		mkdir target
+		zig c++ $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		$(TARGET)
 
 b:
-		rm -rf out
-		mkdir out
-		g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o out/main
+		rm -rf target
+		mkdir target
+		$(CXX_GPP) $(LDFLAGS_DEBUG) -o $(TARGET) $(SOURCE_CXX)
 
 ll:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		cp -rf ./src/main.cpp ./.
-		clang++ -S -emit-llvm main.cpp
-		mv *.ll ./out/.
-		clang++ main.cpp
-		mv *.out ./out/.
+		$(CXX) $(LDFLAGS_EMIT_LLVM) main.cpp
+		mv *.ll ./target
+		$(CXX) $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		mv *.cpp ./target
 		rm -rf *.out
 
 as:
-		rm -rf out
-		mkdir out
-		cp -rf ./src/*.cpp ./out/.
-		g++ -Wall -save-temps ./out/main.cpp
-		mv *.ii ./out
-		mv *.o ./out
-		mv *.s ./out
-		mv *.out ./out
+		rm -rf target
+		mkdir target
+		$(CXX_GPP) $(LDFLAGS_ASSEMBLY) -o $(TARGET) $(SOURCE_CXX)
+		mv *.ii ./target
+		mv *.o ./target
+		mv *.s ./target
+		mv *.bc ./target
 
 fsan:
-		rm -rf out
-		mkdir out
-		cp -rf ./src/main.cpp ./.
-		g++ -ggdb -fsanitize=address -fno-omit-frame-pointer -static-libstdc++ -static-libasan -lrt main.cpp
-		mv *.out ./out
-		mv *.cpp ./out
+		rm -rf target
+		mkdir target
+		$(CXX) $(LDFLAGS_FSANITIZE_ADDRESS) $(SOURCE_CXX) -o $(TARGET)
+		$(CXX) $(LDFLAGS_FSANITIZE_OBJECT) $(TARGET)
+		mv *.out ./target
 
 mem:
-		rm -rf out
-		mkdir out
-		cp -rf ./src/main.cpp ./.
-		g++ -fsanitize=address -g3 -std=c++2b main.cpp
-		mv *.out ./out
-		mv *.cpp ./out
-		valgrind --leak-check=full ./out/a.out
+		rm -rf target
+		mkdir target
+		$(CXX_GPP) $(LDFLAGS_FSANITIZE_VALGRIND) $(SOURCE_CXX) -o $(TARGET)
+		valgrind --leak-check=full $(TARGET)
 
 obj:
-		rm -rf out
-		mkdir out
-		g++ -std=c++2b -Wall -Wextra -ggdb -c ./src/main.cpp
-		mv *.o ./out
-		objdump --disassemble -S -C ./out/main.o
+		rm -rf target
+		mkdir target
+		$(CXX_GPP) $(LDFLAGS_ASSEMBLY) -o $(TARGET) $(SOURCE_CXX)
+		mv *.ii ./target
+		mv *.o ./target
+		mv *.s ./target
+		mv *.bc ./target
+		objdump --disassemble -S -C ./target/main.o
 
 xx:
-		rm -rf out
-		mkdir out
-		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
-		xxd -c 16 ./out/main
+		rm -rf target
+		mkdir target
+		$(CXX_GPP) $(LDFLAGS_FSANITIZE_VALGRIND) $(SOURCE_CXX) -o $(TARGET)
+		xxd -c 16 $(TARGET)
 
 clean:
-		rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM
+		rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM
 
 init:
 		mkdir src
@@ -95,19 +116,19 @@ vscode:
 		echo "			\"type\": \"lldb\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
 		echo "			\"name\": \"Launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"$$\{workspaceFolder}/out/$$\{fileBasenameNoExtension}\"," >> .vscode/launch.json
+		echo "			\"program\": \"\x24{workspaceFolder}/target/\x24{fileBasenameNoExtension}\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
-		echo "			\"cwd\": \"$$\{workspaceFolder}\"," >> .vscode/launch.json
+		echo "			\"cwd\": \"\x24{workspaceFolder}\"," >> .vscode/launch.json
 		echo "			// \"preLaunchTask\": \"C/C++: clang build active file\"" >> .vscode/launch.json
 		echo "		}," >> .vscode/launch.json
 		echo "		{" >> .vscode/launch.json
 		echo "			\"name\": \"gcc - Build and debug active file\"," >> .vscode/launch.json
 		echo "			\"type\": \"cppdbg\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"$$\{fileDirname}/out/\"," >> .vscode/launch.json
+		echo "			\"program\": \"'/target/'\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
 		echo "			\"stopAtEntry\": false," >> .vscode/launch.json
-		echo "			\"cwd\": \"$$\{fileDirname}\"," >> .vscode/launch.json
+		echo "			\"cwd\": \"\"," >> .vscode/launch.json
 		echo "			\"environment\": []," >> .vscode/launch.json
 		echo "			\"externalConsole\": false," >> .vscode/launch.json
 		echo "			\"MIMode\": \"lldb\"," >> .vscode/launch.json
@@ -126,15 +147,15 @@ vscode:
 		echo "				\"-fcolor-diagnostics\"," >> .vscode/tasks.json
 		echo "				\"-fansi-escape-codes\"," >> .vscode/tasks.json
 		echo "				\"-g\"," >> .vscode/tasks.json
-		echo "				\"$$\{file}\"," >> .vscode/tasks.json
+		echo "				\"\x24{file}\"," >> .vscode/tasks.json
 		echo "				\"-o\"," >> .vscode/tasks.json
-		echo "				\"$$\{fileDirname}/out/$$\{fileBasenameNoExtension}\"" >> .vscode/tasks.json
+		echo "				\"\x24{fileDirname}/target/\x24{fileBasenameNoExtension}\"" >> .vscode/tasks.json
 		echo "			]," >> .vscode/tasks.json
 		echo "			\"options\": {" >> .vscode/tasks.json
-		echo "				\"cwd\": \"$$\{fileDirname}\"" >> .vscode/tasks.json
+		echo "				\"cwd\": \"\x24{fileDirname}\"" >> .vscode/tasks.json
 		echo "			}," >> .vscode/tasks.json
 		echo "			\"problemMatcher\": [" >> .vscode/tasks.json
-		echo "				\"$$\gcc\"" >> .vscode/tasks.json
+		echo "				\"\x24gcc\"" >> .vscode/tasks.json
 		echo "			]," >> .vscode/tasks.json
 		echo "			\"group\": {" >> .vscode/tasks.json
 		echo "				\"kind\": \"build\"," >> .vscode/tasks.json

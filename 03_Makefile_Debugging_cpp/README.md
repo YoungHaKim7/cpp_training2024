@@ -75,8 +75,8 @@ echo "\x09\x09objdump --disassemble -S -C ./target/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "xx:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
-echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp" >> Makefile &&
-echo "\x09\x09xxd -c 16 ./target/main" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_VALGRIND) \x24(SOURCE_CXX) -o \x24(TARGET)" >> Makefile &&
+echo "\x09\x09xxd -c 16 \x24(TARGET)" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
