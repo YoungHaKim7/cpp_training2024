@@ -54,7 +54,7 @@ set shiftwidth=2
         <td>i16</td>
         <td>__int16</td>
         <td>2</td>
-        <td>short, <br>short int<br>signed short int</td>
+        <td>short, <br>short int,<br>signed short int</td>
         <td>-32,768 to 32,767</td>
     </tr>
     <tr align="center">
