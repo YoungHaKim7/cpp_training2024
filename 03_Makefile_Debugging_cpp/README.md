@@ -542,76 +542,91 @@ user@host:~$ xxd-rs dump Cargo.toml
   - 
 
 # Makefile
+
 ```Makefile
+C = gcc 
+CXX = clang++
+CXX_GPP = g++
+
+SOURCE_CXX = ./src/main.cpp
+SOURCE_CXX_OBJ = ./target/main.o
+
+TARGET = ./target/main
+LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb
+LDFLAGS_DEBUG = -c -std=c++2b -pthread -lm -Wall -Wextra -ggdb
+LDFLAGS_EMIT_LLVM = -S -emit-llvm
+LDFLAGS_ASSEMBLY = -Wall -save-temps
+LDFLAGS_FSANITIZE_ADDRESS = -O1 -g -fsanitize=address -fno-omit-frame-pointer -c
+LDFLAGS_FSANITIZE_OBJECT = -g -fsanitize=address
+LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b
+
 r:
 		rm -rf target
 		mkdir target
-		g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp
-		./target/main
+		g++ $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		$(TARGET)
 
 zr:
 		rm -rf target
 		mkdir target
-		zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp
-		./target/main
+		zig c++ $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		$(TARGET)
 
 b:
 		rm -rf target
 		mkdir target
-		g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o target/main
+		$(CXX_GPP) $(LDFLAGS_DEBUG) -o $(TARGET) $(SOURCE_CXX)
 
 ll:
 		rm -rf target
 		mkdir target
 		cp -rf ./src/main.cpp ./.
-		clang++ -S -emit-llvm main.cpp
-		mv *.ll ./target/.
-		clang++ main.cpp
-		mv *.out ./target/.
+		$(CXX) $(LDFLAGS_EMIT_LLVM) main.cpp
+		mv *.ll ./target
+		$(CXX) $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		mv *.cpp ./target
 		rm -rf *.out
 
 as:
 		rm -rf target
 		mkdir target
-		cp -rf ./src/*.cpp ./target/.
-		g++ -Wall -save-temps ./target/main.cpp
+		$(CXX_GPP) $(LDFLAGS_ASSEMBLY) -o $(TARGET) $(SOURCE_CXX)
 		mv *.ii ./target
 		mv *.o ./target
 		mv *.s ./target
-		mv *.out ./target
+		mv *.bc ./target
 
 fsan:
 		rm -rf target
 		mkdir target
-		cp -rf ./src/main.cpp ./.
-		g++ -ggdb -fsanitize=address -fno-omit-frame-pointer -static-libstdc++ -static-libasan -lrt main.cpp
+		$(CXX) $(LDFLAGS_FSANITIZE_ADDRESS) $(SOURCE_CXX) -o $(TARGET)
+		$(CXX) $(LDFLAGS_FSANITIZE_OBJECT) $(TARGET)
 		mv *.out ./target
-		mv *.cpp ./target
 
 mem:
 		rm -rf target
 		mkdir target
-		cp -rf ./src/main.cpp ./.
-		g++ -fsanitize=address -g3 -std=c++2b main.cpp
-		mv *.out ./target
-		mv *.cpp ./target
-		valgrind --leak-check=full ./target/a.out
+		$(CXX_GPP) $(LDFLAGS_FSANITIZE_VALGRIND) $(SOURCE_CXX) -o $(TARGET)
+		valgrind --leak-check=full $(TARGET)
 
 obj:
 		rm -rf target
 		mkdir target
-		g++ -std=c++2b -Wall -Wextra -ggdb -c ./src/main.cpp
+		$(CXX_GPP) $(LDFLAGS_ASSEMBLY) -o $(TARGET) $(SOURCE_CXX)
+		mv *.ii ./target
 		mv *.o ./target
+		mv *.s ./target
+		mv *.bc ./target
 		objdump --disassemble -S -C ./target/main.o
 
 xx:
 		rm -rf target
 		mkdir target
-		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp
-		xxd -c 16 ./target/main
+		$(CXX_GPP) $(LDFLAGS_FSANITIZE_VALGRIND) $(SOURCE_CXX) -o $(TARGET)
+		xxd -c 16 $(TARGET)
 
 clean:
-		rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM
+		rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM
 
 init:
 		mkdir src
@@ -640,19 +655,19 @@ vscode:
 		echo "			\"type\": \"lldb\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
 		echo "			\"name\": \"Launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"$$\{workspaceFolder}/target/$$\{fileBasenameNoExtension}\"," >> .vscode/launch.json
+		echo "			\"program\": \"\x24{workspaceFolder}/target/\x24{fileBasenameNoExtension}\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
-		echo "			\"cwd\": \"$$\{workspaceFolder}\"," >> .vscode/launch.json
+		echo "			\"cwd\": \"\x24{workspaceFolder}\"," >> .vscode/launch.json
 		echo "			// \"preLaunchTask\": \"C/C++: clang build active file\"" >> .vscode/launch.json
 		echo "		}," >> .vscode/launch.json
 		echo "		{" >> .vscode/launch.json
 		echo "			\"name\": \"gcc - Build and debug active file\"," >> .vscode/launch.json
 		echo "			\"type\": \"cppdbg\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"$$\{fileDirname}/target/\"," >> .vscode/launch.json
+		echo "			\"program\": \"'/target/'\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
 		echo "			\"stopAtEntry\": false," >> .vscode/launch.json
-		echo "			\"cwd\": \"$$\{fileDirname}\"," >> .vscode/launch.json
+		echo "			\"cwd\": \"\"," >> .vscode/launch.json
 		echo "			\"environment\": []," >> .vscode/launch.json
 		echo "			\"externalConsole\": false," >> .vscode/launch.json
 		echo "			\"MIMode\": \"lldb\"," >> .vscode/launch.json
@@ -671,15 +686,15 @@ vscode:
 		echo "				\"-fcolor-diagnostics\"," >> .vscode/tasks.json
 		echo "				\"-fansi-escape-codes\"," >> .vscode/tasks.json
 		echo "				\"-g\"," >> .vscode/tasks.json
-		echo "				\"$$\{file}\"," >> .vscode/tasks.json
+		echo "				\"\x24{file}\"," >> .vscode/tasks.json
 		echo "				\"-o\"," >> .vscode/tasks.json
-		echo "				\"$$\{fileDirname}/target/$$\{fileBasenameNoExtension}\"" >> .vscode/tasks.json
+		echo "				\"\x24{fileDirname}/target/\x24{fileBasenameNoExtension}\"" >> .vscode/tasks.json
 		echo "			]," >> .vscode/tasks.json
 		echo "			\"options\": {" >> .vscode/tasks.json
-		echo "				\"cwd\": \"$$\{fileDirname}\"" >> .vscode/tasks.json
+		echo "				\"cwd\": \"\x24{fileDirname}\"" >> .vscode/tasks.json
 		echo "			}," >> .vscode/tasks.json
 		echo "			\"problemMatcher\": [" >> .vscode/tasks.json
-		echo "				\"$$\gcc\"" >> .vscode/tasks.json
+		echo "				\"\x24gcc\"" >> .vscode/tasks.json
 		echo "			]," >> .vscode/tasks.json
 		echo "			\"group\": {" >> .vscode/tasks.json
 		echo "				\"kind\": \"build\"," >> .vscode/tasks.json
