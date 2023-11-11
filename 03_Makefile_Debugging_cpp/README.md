@@ -1,6 +1,6 @@
 # Link
 - <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#makefile">Makefile로 이동하기</a>
-- test
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore">echo로 .gitignore 넣기 이동</a>
 
 # Cpp Makefile(macOS)
 
@@ -498,7 +498,7 @@ user@host:~$ xxd-rs dump Cargo.toml
 
 <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore">echo로 .gitignore 넣기</a>
 
-# Makefile<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-makefilemacos">[🔝]</a>
+# Makefile<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">[🔝]</a>
 
 
 ```Makefile
@@ -670,7 +670,7 @@ vscode:
 
 <br>
 
-<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#makefile">Makefile로 이동하기</a>
+<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">Makefile로 이동하기</a>
 
 # cpp ```.gitignore``` <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-makefilemacos">[🔝]</a>
 
