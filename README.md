@@ -19,6 +19,216 @@ set shiftwidth=2
 
 <hr>
 
+# C++ vs Rust 변수 용량 비교  범위
+
+<table border="1">
+    <tr>
+    <td colspan="5" align="center">Rust tutorial</td>
+    </tr>
+    <tr align="center">
+        <td>Rust</td>
+        <td colspan="4">C++</td>
+    </tr>
+    <tr align="center">
+        <td></td>
+        <td>Type<br>Name</td>
+        <td>Bytes</td>
+        <td>Other<br>Names</td>
+        <td>Range of Values</td>
+    </tr>
+    <tr align="center">
+        <td>i8</td>
+        <td>__int8</td>
+        <td>1</td>
+        <td>char</td>
+        <td>-128 to 127</td>
+    </tr>
+    <tr align="center">
+        <td>u8</td>
+        <td>unsigned<br>__int8</td>
+        <td>1</td>
+        <td>unsigned<br>char</td>
+        <td>0 to 255</td>
+    </tr>
+    <tr align="center">
+        <td>i16</td>
+        <td>__int16</td>
+        <td>2</td>
+        <td>short, <br>short int<br>signed short int</td>
+        <td>-32,768 to 32,767</td>
+    </tr>
+    <tr align="center">
+        <td>u16</td>
+        <td>unsigned<br>__int16</td>
+        <td>2</td>
+        <td>unsigned short<br>unsigned short int</td>
+        <td>0 to 65,535</td>
+    </tr>
+    <tr align="center">
+        <td>i32</td>
+        <td>__int32</td>
+        <td>4</td>
+        <td>signed, <br>signed int<br>int</td>
+        <td>-2,147,483,648 to 2,147,483,647</td>
+    </tr>
+    <tr align="center">
+        <td>u32</td>
+        <td>unsigned __int32</td>
+        <td>4</td>
+        <td>unsigned, <br>unsigned int</td>
+        <td>0 to 4,294,967,295</td>
+    </tr>
+    <tr align="center">
+        <td>i32</td>
+        <td>int</td>
+        <td>4</td>
+        <td>signed</td>
+        <td>-2,147,483,648 to 2,147,483,647</td>
+    </tr>
+    <tr align="center">
+        <td>u32</td>
+        <td>unsigned int</td>
+        <td>4</td>
+        <td>unsigned</td>
+        <td>0 to 4,294,967,295</td>
+    </tr>
+    <tr align="center">
+        <td>i64</td>
+        <td>__int64</td>
+        <td>8</td>
+        <td>long long,<br>signed long long</td>
+        <td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+    </tr>
+    <tr align="center">
+        <td>u64</td>
+        <td>unsigned __int64</td>
+        <td>8</td>
+        <td>unsigned long long</td>
+        <td>0 to 18,446,744,073,709,551,615</td>
+    </tr>
+    <tr align="center">
+        <td>bool</td>
+        <td>bool</td>
+        <td>1</td>
+        <td>none</td>
+        <td>false or true</td>
+    </tr>
+    <tr align="center">
+        <td>char</td>
+        <td>char</td>
+        <td>1</td>
+        <td>none</td>
+        <td>-128 to 127<br> by default<br>
+
+0 to 255 when compiled by using </td>
+    </tr>
+    <tr align="center">
+        <td>char</td>
+        <td>signed char</td>
+        <td>1</td>
+        <td>none</td>
+        <td>128 to 127</td>
+    </tr>
+    <tr align="center">
+        <td>char</td>
+        <td>unsigned char</td>
+        <td>1</td>
+        <td>none</td>
+        <td>0 to 255</td>
+    </tr>
+    <tr align="center">
+        <td>i16</td>
+        <td>short</td>
+        <td>2</td>
+        <td>short int<br>signed short int</td>
+        <td>-32,768 to 32,767</td>
+    </tr>
+    <tr align="center">
+        <td>u16</td>
+        <td>unsigned short</td>
+        <td>2</td>
+        <td>unsigned short int</td>
+        <td>0 to 65,535</td>
+    </tr>
+    <tr align="center">
+        <td>i32</td>
+        <td>long</td>
+        <td>4</td>
+        <td>long int,<br>signed long int</td>
+        <td>-2,147,483,648 to 2,147,483,647</td>
+    </tr>
+    <tr align="center">
+        <td>u32</td>
+        <td>unsigned long</td>
+        <td>4</td>
+        <td>unsigned long int</td>
+        <td>0 to 4,294,967,295</td>
+    </tr>
+    <tr align="center">
+        <td>i64</td>
+        <td>long long</td>
+        <td>8</td>
+        <td>none<br>(but equivalent to __int64)</td>
+        <td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+    </tr>
+    <tr align="center">
+        <td>u64</td>
+        <td>unsigned long long</td>
+        <td>8</td>
+        <td>none<br>(but equivalent to unsigned __int64)</td>
+        <td>0 to 18,446,744,073,709,551,615</td>
+    </tr>
+    <tr align="center">
+        <td>enum</td>
+        <td>enum</td>
+        <td>varies</td>
+        <td>none</td>
+        <td></td>
+    </tr>
+    <tr align="center">
+        <td>f32</td>
+        <td>float</td>
+        <td>4</td>
+        <td>none</td>
+        <td>3.4E +/- 38 (7 digits)</td>
+    </tr>
+    <tr align="center">
+        <td>f64</td>
+        <td>double</td>
+        <td>8</td>
+        <td>none</td>
+        <td>1.7E +/- 308 (15 digits)</td>
+    </tr>
+    <tr align="center">
+        <td>f64</td>
+        <td>long double</td>
+        <td>same as double</td>
+        <td>none</td>
+        <td>Same as double</td>
+    </tr>
+    <tr align="center">
+        <td>u16</td>
+        <td>wchar_t</td>
+        <td>2</td>
+        <td>__wchar_t</td>
+        <td>0 to 65,535</td>
+    </tr>
+</table>
+
+- Depending on how it's used, a variable of __wchar_t designates either a wide-character type or multibyte-character type. Use the L prefix before a character or string constant to designate the wide-character-type constant.
+
+- signed and unsigned are modifiers that you can use with any integral type except bool. Note that char, signed char, and unsigned char are three distinct types for the purposes of mechanisms like overloading and templates.
+
+- The int and unsigned int types have a size of four bytes. However, portable code should not depend on the size of int because the language standard allows this to be implementation-specific.
+
+- C/C++ in Visual Studio also supports sized integer types. For more information, see __int8, __int16, __int32, __int64 and Integer Limits.
+
+- For more information about the restrictions of the sizes of each type, see Built-in types.
+
+- The range of enumerated types varies depending on the language context and specified compiler flags. For more information, see C Enumeration Declarations and Enumerations.
+
+https://learn.microsoft.com/en-us/cpp/cpp/data-type-ranges?view=msvc-170
+
 # 코딩의 근본 shellscript
 
 https://www.shellscript.sh/
