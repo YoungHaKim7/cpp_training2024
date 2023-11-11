@@ -1,62 +1,82 @@
 # Cpp Makefile(macOS)
 
 ```bash
-echo "r:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
-echo "\x09\x09./out/main\xa" >> Makefile &&
-
-echo "zr:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
-echo "\x09\x09./out/main\xa" >> Makefile &&
-
-echo "b:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
-echo "\x09\x09g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o out/main" >> Makefile &&
+echo "C = gcc " >> Makefile &&
+echo "CXX = clang++" >> Makefile &&
+echo "CXX_GPP = g++" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "ll:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "SOURCE_CXX = ./src/main.cpp" >> Makefile &&
+echo "" >> Makefile &&
+
+echo "TARGET = ./target/main" >> Makefile &&
+echo "LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb" >> Makefile &&
+echo "LDFLAGS_DEBUG = -c -std=c++2b -pthread -lm -Wall -Wextra -ggdb" >> Makefile &&
+echo "LDFLAGS_EMIT_LLVM = -S -emit-llvm" >> Makefile &&
+echo "LDFLAGS_ASSEMBLY = -Wall -save-temps" >> Makefile &&
+
+echo "" >> Makefile &&
+echo "r3:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09\x24(C) -c \x24(SOURCE_C) -o \x24(OBJECTS_C)" >> Makefile &&
+echo "\x09\x09\x24(CXX) \x24(SOURCE_CXX) \x24(OBJECTS_C) \x24(LDFLAGS_COMMON) -o \x24(TARGET)" >> Makefile &&
+echo "\x09\x09\x24(TARGET)" >> Makefile &&
+echo "" >> Makefile &&
+
+echo "r:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09g++ \x24(LDFLAGS_COMMON) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "\x09\x09\x24(TARGET)\xa" >> Makefile &&
+
+echo "zr:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09zig c++ \x24(LDFLAGS_COMMON) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "\x09\x09\x24(TARGET)\xa" >> Makefile &&
+
+echo "b:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_DEBUG) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "" >> Makefile &&
+
+echo "ll:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
-echo "\x09\x09clang++ -S -emit-llvm main.cpp" >> Makefile &&
-echo "\x09\x09mv *.ll ./out/." >> Makefile &&
-echo "\x09\x09clang++ main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./out/." >> Makefile &&
+echo "\x09\x09\x24(CXX) \x24(LDFLAGS_EMIT_LLVM) main.cpp" >> Makefile &&
+echo "\x09\x09mv *.ll ./target" >> Makefile &&
+echo "\x09\x09\x24(CXX) \x24(LDFLAGS_COMMON) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "\x09\x09mv *.cpp ./target" >> Makefile &&
 echo "\x09\x09rm -rf *.out" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "as:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
-echo "\x09\x09cp -rf ./src/*.cpp ./out/." >> Makefile &&
-echo "\x09\x09g++ -Wall -save-temps ./out/main.cpp" >> Makefile &&
-echo "\x09\x09mv *.ii ./out" >> Makefile &&
-echo "\x09\x09mv *.o ./out" >> Makefile &&
-echo "\x09\x09mv *.s ./out" >> Makefile &&
-echo "\x09\x09mv *.out ./out" >> Makefile &&
+echo "as:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
+echo "\x09\x09cp -rf ./src/*.cpp ./target/." >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_ASSEMBLY) \x24(SOURCE_CXX)" >> Makefile &&
+echo "\x09\x09mv *.ii ./target" >> Makefile &&
+echo "\x09\x09mv *.o ./target" >> Makefile &&
+echo "\x09\x09mv *.s ./target" >> Makefile &&
+echo "\x09\x09mv *.out ./target" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "fsan:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "fsan:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
 echo "\x09\x09g++ -ggdb -fsanitize=address -fno-omit-frame-pointer -static-libstdc++ -static-libasan -lrt main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./out" >> Makefile &&
-echo "\x09\x09mv *.cpp ./out" >> Makefile &&
+echo "\x09\x09mv *.out ./target" >> Makefile &&
+echo "\x09\x09mv *.cpp ./target" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "mem:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "mem:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
 echo "\x09\x09g++ -fsanitize=address -g3 -std=c++2b main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./out" >> Makefile &&
-echo "\x09\x09mv *.cpp ./out" >> Makefile &&
-echo "\x09\x09valgrind --leak-check=full ./out/a.out" >> Makefile &&
+echo "\x09\x09mv *.out ./target" >> Makefile &&
+echo "\x09\x09mv *.cpp ./target" >> Makefile &&
+echo "\x09\x09valgrind --leak-check=full ./target/a.out" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "obj:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "obj:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09g++ -std=c++2b -Wall -Wextra -ggdb -c ./src/main.cpp" >> Makefile &&
-echo "\x09\x09mv *.o ./out" >> Makefile &&
-echo "\x09\x09objdump --disassemble -S -C ./out/main.o" >> Makefile &&
+echo "\x09\x09mv *.o ./target" >> Makefile &&
+echo "\x09\x09objdump --disassemble -S -C ./target/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "xx:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
-echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
-echo "\x09\x09xxd -c 16 ./out/main" >> Makefile &&
+echo "xx:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
+echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp" >> Makefile &&
+echo "\x09\x09xxd -c 16 ./target/main" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM" >> Makefile &&
+echo "\x09\x09rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "init:\xa\x09\x09mkdir src" >> Makefile &&
@@ -84,7 +104,7 @@ echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"lldb\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": \\\"launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"Launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\\\x24{workspaceFolder}/out/\\\x24{fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\\\x24{workspaceFolder}/target/\\\x24{fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"\\\x24{workspaceFolder}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09// \\\"preLaunchTask\\\": \\\"C/C++: clang build active file\\\"\x22 >> .vscode/launch.json" >> Makefile &&
@@ -94,7 +114,7 @@ echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"gcc - Build and debug active file\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"cppdbg\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": \\\"launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"'${fileDirname}/out/${fileBasenameNoExtension}'\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"'${fileDirname}/target/${fileBasenameNoExtension}'\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"stopAtEntry\\\": false,\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"${fileDirname}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
@@ -119,7 +139,7 @@ echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-fansi-escape-codes\\\",\x22 >> .vsco
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-g\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\\\x24{file}\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-o\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\\\x24{fileDirname}/out/\\\x24{fileBasenameNoExtension}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\\\x24{fileDirname}/target/\\\x24{fileBasenameNoExtension}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09],\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"options\\\": {\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"cwd\\\": \\\"\\\x24{fileDirname}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
@@ -145,7 +165,7 @@ echo "# https://github.com/github/gitignore\xa" >> .gitignore &&
 echo "# General" >> .gitignore &&
 echo ".DS_Store" >> .gitignore &&
 echo "dir/otherdir/.DS_Store\xa" >> .gitignore &&
-echo "out/" >> .gitignore &&
+echo "target/" >> .gitignore &&
 echo ".vscode/" >> .gitignore &&
 
 
@@ -221,62 +241,62 @@ std::endl; 이거 보다
 <br>
 
 ```bash
-echo "r:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
-echo "\x09\x09./out/main\xa" >> Makefile &&
+echo "r:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp" >> Makefile &&
+echo "\x09\x09./target/main\xa" >> Makefile &&
 
-echo "zr:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
-echo "\x09\x09./out/main\xa" >> Makefile &&
+echo "zr:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp" >> Makefile &&
+echo "\x09\x09./target/main\xa" >> Makefile &&
 
-echo "b:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
-echo "\x09\x09g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o out/main" >> Makefile &&
+echo "b:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
+echo "\x09\x09g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o target/main" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "ll:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "ll:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
 echo "\x09\x09clang++ -S -emit-llvm main.cpp" >> Makefile &&
-echo "\x09\x09mv *.ll ./out/." >> Makefile &&
+echo "\x09\x09mv *.ll ./target/." >> Makefile &&
 echo "\x09\x09clang++ main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./out/." >> Makefile &&
-echo "\x09\x09rm -rf *.out" >> Makefile &&
+echo "\x09\x09mv *.out ./target/." >> Makefile &&
+echo "\x09\x09rm -rf *.target" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "as:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
-echo "\x09\x09cp -rf ./src/*.cpp ./out/." >> Makefile &&
-echo "\x09\x09g++ -Wall -save-temps ./out/main.cpp" >> Makefile &&
-echo "\x09\x09mv *.ii ./out" >> Makefile &&
-echo "\x09\x09mv *.o ./out" >> Makefile &&
-echo "\x09\x09mv *.s ./out" >> Makefile &&
-echo "\x09\x09mv *.out ./out" >> Makefile &&
+echo "as:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
+echo "\x09\x09cp -rf ./src/*.cpp ./target/." >> Makefile &&
+echo "\x09\x09g++ -Wall -save-temps ./target/main.cpp" >> Makefile &&
+echo "\x09\x09mv *.ii ./target" >> Makefile &&
+echo "\x09\x09mv *.o ./target" >> Makefile &&
+echo "\x09\x09mv *.s ./target" >> Makefile &&
+echo "\x09\x09mv *.out ./target" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "fsan:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "fsan:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
 echo "\x09\x09g++ -ggdb -fsanitize=address -fno-omit-frame-pointer -static-libstdc++ -static-libasan -lrt main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./out" >> Makefile &&
-echo "\x09\x09mv *.cpp ./out" >> Makefile &&
+echo "\x09\x09mv *.out ./target" >> Makefile &&
+echo "\x09\x09mv *.cpp ./target" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "mem:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "mem:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
 echo "\x09\x09g++ -fsanitize=address -g3 -std=c++2b main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./out" >> Makefile &&
-echo "\x09\x09mv *.cpp ./out" >> Makefile &&
-echo "\x09\x09valgrind --leak-check=full ./out/a.out" >> Makefile &&
+echo "\x09\x09mv *.out ./target" >> Makefile &&
+echo "\x09\x09mv *.cpp ./target" >> Makefile &&
+echo "\x09\x09valgrind --leak-check=full ./target/a.out" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "obj:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
+echo "obj:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09g++ -std=c++2b -Wall -Wextra -ggdb -c ./src/main.cpp" >> Makefile &&
-echo "\x09\x09mv *.o ./out" >> Makefile &&
-echo "\x09\x09objdump --disassemble -S -C ./out/main.o" >> Makefile &&
+echo "\x09\x09mv *.o ./target" >> Makefile &&
+echo "\x09\x09objdump --disassemble -S -C ./target/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
-echo "xx:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out" >> Makefile &&
-echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp" >> Makefile &&
-echo "\x09\x09xxd -c 16 ./out/main" >> Makefile &&
+echo "xx:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
+echo "\x09\x09g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp" >> Makefile &&
+echo "\x09\x09xxd -c 16 ./target/main" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM" >> Makefile &&
+echo "\x09\x09rm -rf ./target *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "init:\xa\x09\x09mkdir src" >> Makefile &&
@@ -304,7 +324,7 @@ echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"lldb\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": \\\"launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"Launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\$$\\\{workspaceFolder}/out/\$$\\\{fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\$$\\\{workspaceFolder}/target/\$$\\\{fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"\$$\\\{workspaceFolder}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09// \\\"preLaunchTask\\\": \\\"C/C++: clang build active file\\\"\x22 >> .vscode/launch.json" >> Makefile &&
@@ -314,7 +334,7 @@ echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"gcc - Build and debug active file\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"cppdbg\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": \\\"launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\$$\\\{fileDirname}/out/${fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\$$\\\{fileDirname}/target/${fileBasenameNoExtension}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"stopAtEntry\\\": false,\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"\$$\\\{fileDirname}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
@@ -339,7 +359,7 @@ echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-fansi-escape-codes\\\",\x22 >> .vsco
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-g\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\$$\\\{file}\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-o\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\$$\\\{fileDirname}/out/\$$\\\{fileBasenameNoExtension}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"\$$\\\{fileDirname}/target/\$$\\\{fileBasenameNoExtension}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09],\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"options\\\": {\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"cwd\\\": \\\"\$$\\\{fileDirname}\\\"\x22 >> .vscode/tasks.json" >> Makefile &&
@@ -365,7 +385,7 @@ echo "# https://github.com/github/gitignore\xa" >> .gitignore &&
 echo "# General" >> .gitignore &&
 echo ".DS_Store" >> .gitignore &&
 echo "dir/otherdir/.DS_Store\xa" >> .gitignore &&
-echo "out/" >> .gitignore &&
+echo "target/" >> .gitignore &&
 echo ".vscode/" >> .gitignore &&
 
 
@@ -474,71 +494,71 @@ user@host:~$ xxd-rs dump Cargo.toml
 # Makefile
 ```Makefile
 r:
-		rm -rf out
-		mkdir out
-		g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
-		./out/main
+		rm -rf target
+		mkdir target
+		g++ -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp
+		./target/main
 
 zr:
-		rm -rf out
-		mkdir out
-		zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
-		./out/main
+		rm -rf target
+		mkdir target
+		zig c++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp
+		./target/main
 
 b:
-		rm -rf out
-		mkdir out
-		g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o out/main
+		rm -rf target
+		mkdir target
+		g++ -c -pthread -lm -Wall -Wextra -ggdb src/main.cpp -o target/main
 
 ll:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		cp -rf ./src/main.cpp ./.
 		clang++ -S -emit-llvm main.cpp
-		mv *.ll ./out/.
+		mv *.ll ./target/.
 		clang++ main.cpp
-		mv *.out ./out/.
+		mv *.out ./target/.
 		rm -rf *.out
 
 as:
-		rm -rf out
-		mkdir out
-		cp -rf ./src/*.cpp ./out/.
-		g++ -Wall -save-temps ./out/main.cpp
-		mv *.ii ./out
-		mv *.o ./out
-		mv *.s ./out
-		mv *.out ./out
+		rm -rf target
+		mkdir target
+		cp -rf ./src/*.cpp ./target/.
+		g++ -Wall -save-temps ./target/main.cpp
+		mv *.ii ./target
+		mv *.o ./target
+		mv *.s ./target
+		mv *.out ./target
 
 fsan:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		cp -rf ./src/main.cpp ./.
 		g++ -ggdb -fsanitize=address -fno-omit-frame-pointer -static-libstdc++ -static-libasan -lrt main.cpp
-		mv *.out ./out
-		mv *.cpp ./out
+		mv *.out ./target
+		mv *.cpp ./target
 
 mem:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		cp -rf ./src/main.cpp ./.
 		g++ -fsanitize=address -g3 -std=c++2b main.cpp
-		mv *.out ./out
-		mv *.cpp ./out
-		valgrind --leak-check=full ./out/a.out
+		mv *.out ./target
+		mv *.cpp ./target
+		valgrind --leak-check=full ./target/a.out
 
 obj:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		g++ -std=c++2b -Wall -Wextra -ggdb -c ./src/main.cpp
-		mv *.o ./out
-		objdump --disassemble -S -C ./out/main.o
+		mv *.o ./target
+		objdump --disassemble -S -C ./target/main.o
 
 xx:
-		rm -rf out
-		mkdir out
-		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o out/main src/main.cpp
-		xxd -c 16 ./out/main
+		rm -rf target
+		mkdir target
+		g++ -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb -o target/main src/main.cpp
+		xxd -c 16 ./target/main
 
 clean:
 		rm -rf ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM
@@ -570,7 +590,7 @@ vscode:
 		echo "			\"type\": \"lldb\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
 		echo "			\"name\": \"Launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"$$\{workspaceFolder}/out/$$\{fileBasenameNoExtension}\"," >> .vscode/launch.json
+		echo "			\"program\": \"$$\{workspaceFolder}/target/$$\{fileBasenameNoExtension}\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
 		echo "			\"cwd\": \"$$\{workspaceFolder}\"," >> .vscode/launch.json
 		echo "			// \"preLaunchTask\": \"C/C++: clang build active file\"" >> .vscode/launch.json
@@ -579,7 +599,7 @@ vscode:
 		echo "			\"name\": \"gcc - Build and debug active file\"," >> .vscode/launch.json
 		echo "			\"type\": \"cppdbg\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"$$\{fileDirname}/out/\"," >> .vscode/launch.json
+		echo "			\"program\": \"$$\{fileDirname}/target/\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
 		echo "			\"stopAtEntry\": false," >> .vscode/launch.json
 		echo "			\"cwd\": \"$$\{fileDirname}\"," >> .vscode/launch.json
@@ -603,7 +623,7 @@ vscode:
 		echo "				\"-g\"," >> .vscode/tasks.json
 		echo "				\"$$\{file}\"," >> .vscode/tasks.json
 		echo "				\"-o\"," >> .vscode/tasks.json
-		echo "				\"$$\{fileDirname}/out/$$\{fileBasenameNoExtension}\"" >> .vscode/tasks.json
+		echo "				\"$$\{fileDirname}/target/$$\{fileBasenameNoExtension}\"" >> .vscode/tasks.json
 		echo "			]," >> .vscode/tasks.json
 		echo "			\"options\": {" >> .vscode/tasks.json
 		echo "				\"cwd\": \"$$\{fileDirname}\"" >> .vscode/tasks.json
