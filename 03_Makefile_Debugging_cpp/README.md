@@ -612,10 +612,10 @@ vscode:
 		echo "			\"name\": \"gcc - Build and debug active file\"," >> .vscode/launch.json
 		echo "			\"type\": \"cppdbg\"," >> .vscode/launch.json
 		echo "			\"request\": \"launch\"," >> .vscode/launch.json
-		echo "			\"program\": \"'/target/'\"," >> .vscode/launch.json
+		echo "			\"program\": \"\x24{fileDirname}/target/\x24{fileBasenameNoExtension}'\"," >> .vscode/launch.json
 		echo "			\"args\": []," >> .vscode/launch.json
 		echo "			\"stopAtEntry\": false," >> .vscode/launch.json
-		echo "			\"cwd\": \"\"," >> .vscode/launch.json
+		echo "			\"cwd\": \"\x24{fileDirname}\"," >> .vscode/launch.json
 		echo "			\"environment\": []," >> .vscode/launch.json
 		echo "			\"externalConsole\": false," >> .vscode/launch.json
 		echo "			\"MIMode\": \"lldb\"," >> .vscode/launch.json
