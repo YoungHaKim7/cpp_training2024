@@ -66,8 +66,11 @@ echo "\x09\x09valgrind --leak-check=full \x24(TARGET)" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "obj:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
-echo "\x09\x09g++ -std=c++2b -Wall -Wextra -ggdb -c ./src/main.cpp" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_ASSEMBLY) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "\x09\x09mv *.ii ./target" >> Makefile &&
 echo "\x09\x09mv *.o ./target" >> Makefile &&
+echo "\x09\x09mv *.s ./target" >> Makefile &&
+echo "\x09\x09mv *.bc ./target" >> Makefile &&
 echo "\x09\x09objdump --disassemble -S -C ./target/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
