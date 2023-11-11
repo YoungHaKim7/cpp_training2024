@@ -496,10 +496,9 @@ user@host:~$ xxd-rs dump Cargo.toml
 
 <hr>
 
-<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore-">echo로 .gitignore 넣기</a>
-
 # Makefile<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">[🔝]</a>
 
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore-">echo로 .gitignore 넣기</a>
 
 ```Makefile
 C = gcc 
@@ -670,9 +669,11 @@ vscode:
 
 <br>
 
-<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">Makefile로 이동하기</a>
+<hr>
 
 # cpp ```.gitignore``` <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-makefilemacos">[🔝]</a>
+
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">Makefile로 이동하기</a>
 
 ```bash
 echo "# Result\xa\xa\x60\x60\x60\xa\xa\x60\x60\x60" >> README.md &&
