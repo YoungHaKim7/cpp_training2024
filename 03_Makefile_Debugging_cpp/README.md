@@ -671,9 +671,9 @@ vscode:
 
 <hr>
 
-# cpp ```.gitignore``` <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-makefilemacos">[🔝]</a>
+# cpp ```.gitignore``` <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">[🔝]</a>
 
-- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#link">Makefile로 이동하기</a>
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#makefile">Makefile로 이동하기</a>
 
 ```bash
 echo "# Result\xa\xa\x60\x60\x60\xa\xa\x60\x60\x60" >> README.md &&
