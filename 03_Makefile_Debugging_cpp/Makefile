@@ -14,13 +14,6 @@ LDFLAGS_FSANITIZE_ADDRESS = -O1 -g -fsanitize=address -fno-omit-frame-pointer -c
 LDFLAGS_FSANITIZE_OBJECT = -g -fsanitize=address
 LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b
 
-r3:
-		rm -rf target
-		mkdir target
-		$(C) -c $(SOURCE_C) -o $(OBJECTS_C)
-		$(CXX) $(SOURCE_CXX) $(OBJECTS_C) $(LDFLAGS_COMMON) -o $(TARGET)
-		$(TARGET)
-
 r:
 		rm -rf target
 		mkdir target
