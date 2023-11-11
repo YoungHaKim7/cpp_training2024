@@ -2,21 +2,21 @@ C = gcc
 CXX = clang++
 
 SOURCE_C = ./src/foo.c
-OBJECTS_C = ./out/foo.o
+OBJECTS_C = ./target/foo.o
 SOURCE_CXX = ./src/main.cpp
 
-TARGET = ./out/main
+TARGET = ./target/main
 LDFLAGS_COMMON = -std=c++2a -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb
 
 r3:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		$(C) -c $(SOURCE_C) -o $(OBJECTS_C)
 		$(CXX) $(SOURCE_CXX) $(OBJECTS_C) $(LDFLAGS_COMMON) -o $(TARGET)
 		$(TARGET)
 
 clean:
-		rm -rf $(TARGET) ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM
+		rm -rf $(TARGET) ./target *.out ./src/*.out ./src/target/ *.dSYM ./src/*.dSYM
 
 init3:
 		mkdir src

@@ -8,19 +8,19 @@ echo "C = gcc " >> Makefile &&
 echo "CXX = clang++" >> Makefile &&
 echo "" >> Makefile &&
 echo "SOURCE_C = ./src/foo.c" >> Makefile &&
-echo "OBJECTS_C = ./out/foo.o" >> Makefile &&
+echo "OBJECTS_C = ./target/foo.o" >> Makefile &&
 echo "SOURCE_CXX = ./src/main.cpp" >> Makefile &&
 echo "" >> Makefile &&
-echo "TARGET = ./out/main" >> Makefile &&
+echo "TARGET = ./target/main" >> Makefile &&
 echo "LDFLAGS_COMMON = -std=c++2a -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb" >> Makefile &&
 echo "" >> Makefile &&
-echo "r3:\xa\x09\x09rm -rf out\xa\x09\x09mkdir out\xa\x09\x09\x24(C) -c \x24(SOURCE_C) -o \x24(OBJECTS_C)" >> Makefile &&
+echo "r3:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09\x24(C) -c \x24(SOURCE_C) -o \x24(OBJECTS_C)" >> Makefile &&
 echo "\x09\x09\x24(CXX) \x24(SOURCE_CXX) \x24(OBJECTS_C) \x24(LDFLAGS_COMMON) -o \x24(TARGET)" >> Makefile &&
 echo "\x09\x09\x24(TARGET)" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "clean:" >> Makefile &&
-echo "\x09\x09rm -rf \x24(TARGET) ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM" >> Makefile &&
+echo "\x09\x09rm -rf \x24(TARGET) ./target *.out ./src/*.out ./src/target/ *.dSYM ./src/*.dSYM" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "init3:\xa\x09\x09mkdir src" >> Makefile &&
@@ -60,7 +60,7 @@ echo "# https://github.com/github/gitignore\xa" >> .gitignore &&
 echo "# General" >> .gitignore &&
 echo ".DS_Store" >> .gitignore &&
 echo "dir/otherdir/.DS_Store\xa" >> .gitignore &&
-echo "out/" >> .gitignore &&
+echo "target/" >> .gitignore &&
 echo ".vscode/" >> .gitignore &&
 
 
@@ -118,21 +118,21 @@ C = gcc
 CXX = clang++
 
 SOURCE_C = ./src/foo.c
-OBJECTS_C = ./out/foo.o
+OBJECTS_C = ./target/foo.o
 SOURCE_CXX = ./src/main.cpp
 
-TARGET = ./out/main
+TARGET = ./target/main
 LDFLAGS_COMMON = -std=c++2a -pedantic -pthread -pedantic-errors -lm -Wall -Wextra -ggdb
 
 r3:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		$(C) -c $(SOURCE_C) -o $(OBJECTS_C)
 		$(CXX) $(SOURCE_CXX) $(OBJECTS_C) $(LDFLAGS_COMMON) -o $(TARGET)
 		$(TARGET)
 
 clean:
-		rm -rf $(TARGET) ./out *.out ./src/*.out ./src/out/ *.dSYM ./src/*.dSYM
+		rm -rf $(TARGET) ./target *.out ./src/*.out ./src/target/ *.dSYM ./src/*.dSYM
 
 init3:
 		mkdir src
@@ -160,4 +160,9 @@ init3:
 		echo "#ifdef __cplusplus" >> src/foo.h
 		echo "}" >> src/foo.h
 		echo "#endif" >> src/foo.h
+```
+# Result
+
+```
+
 ```
