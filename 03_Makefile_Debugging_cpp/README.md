@@ -7,6 +7,7 @@ echo "CXX_GPP = g++" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "SOURCE_CXX = ./src/main.cpp" >> Makefile &&
+echo "SOURCE_CXX_OBJ = ./target/main.o" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "TARGET = ./target/main" >> Makefile &&
@@ -14,6 +15,8 @@ echo "LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -lm -Wall 
 echo "LDFLAGS_DEBUG = -c -std=c++2b -pthread -lm -Wall -Wextra -ggdb" >> Makefile &&
 echo "LDFLAGS_EMIT_LLVM = -S -emit-llvm" >> Makefile &&
 echo "LDFLAGS_ASSEMBLY = -Wall -save-temps" >> Makefile &&
+echo "LDFLAGS_FSANITIZE_ADDRESS = -O1 -g -fsanitize=address -fno-omit-frame-pointer -c" >> Makefile &&
+echo "LDFLAGS_FSANITIZE_OBJECT = -g -fsanitize=address" >> Makefile &&
 
 echo "" >> Makefile &&
 echo "r3:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09\x24(C) -c \x24(SOURCE_C) -o \x24(OBJECTS_C)" >> Makefile &&
@@ -42,18 +45,13 @@ echo "" >> Makefile &&
 
 echo "as:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/*.cpp ./target/." >> Makefile &&
-echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_ASSEMBLY) \x24(SOURCE_CXX)" >> Makefile &&
-echo "\x09\x09mv *.ii ./target" >> Makefile &&
-echo "\x09\x09mv *.o ./target" >> Makefile &&
-echo "\x09\x09mv *.s ./target" >> Makefile &&
-echo "\x09\x09mv *.out ./target" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_ASSEMBLY) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "fsan:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
-echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
-echo "\x09\x09g++ -ggdb -fsanitize=address -fno-omit-frame-pointer -static-libstdc++ -static-libasan -lrt main.cpp" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_ADDRESS) \x24(SOURCE_CXX) -o \x24(SOURCE_CXX_OBJ)" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_OBJECT) \x24(SOURCE_CXX_OBJ)" >> Makefile &&
 echo "\x09\x09mv *.out ./target" >> Makefile &&
-echo "\x09\x09mv *.cpp ./target" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "mem:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
