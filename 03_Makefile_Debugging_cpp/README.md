@@ -114,10 +114,10 @@ echo "\x09\x09echo \x22\x09\x09{\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"name\\\": \\\"gcc - Build and debug active file\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"cppdbg\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"request\\\": \\\"launch\\\",\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"'${fileDirname}/target/${fileBasenameNoExtension}'\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"program\\\": \\\"\\\x24{fileDirname}/target/\\\x24{fileBasenameNoExtension}'\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"stopAtEntry\\\": false,\x22 >> .vscode/launch.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"${fileDirname}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
+echo "\x09\x09echo \x22\x09\x09\x09\\\"cwd\\\": \\\"\\\x24{fileDirname}\\\",\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"environment\\\": [],\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"externalConsole\\\": false,\x22 >> .vscode/launch.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"MIMode\\\": \\\"lldb\\\",\x22 >> .vscode/launch.json" >> Makefile &&
@@ -711,3 +711,5 @@ echo "*.app\xa" >> .gitignore
 ```
 
 <br>
+
+
