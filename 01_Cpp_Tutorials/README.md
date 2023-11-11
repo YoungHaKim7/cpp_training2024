@@ -65,5 +65,3 @@ https://learn.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=msvc-170
 https://awesomecpp.com/
 
 
-# tutorial 에 추가 예정
-https://changkun.de/modern-cpp/en-us/00-preface/
