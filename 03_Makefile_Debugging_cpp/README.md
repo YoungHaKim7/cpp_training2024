@@ -19,6 +19,7 @@ echo "LDFLAGS_EMIT_LLVM = -S -emit-llvm" >> Makefile &&
 echo "LDFLAGS_ASSEMBLY = -Wall -save-temps" >> Makefile &&
 echo "LDFLAGS_FSANITIZE_ADDRESS = -O1 -g -fsanitize=address -fno-omit-frame-pointer -c" >> Makefile &&
 echo "LDFLAGS_FSANITIZE_OBJECT = -g -fsanitize=address" >> Makefile &&
+echo "LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b" >> Makefile &&
 
 echo "" >> Makefile &&
 echo "r3:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09\x24(C) -c \x24(SOURCE_C) -o \x24(OBJECTS_C)" >> Makefile &&
@@ -51,17 +52,15 @@ echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_ASSEMBLY) -o \x24(TARGET) \x24(SOURCE_C
 echo "" >> Makefile &&
 
 echo "fsan:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
-echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_ADDRESS) \x24(SOURCE_CXX) -o \x24(SOURCE_CXX_OBJ)" >> Makefile &&
-echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_OBJECT) \x24(SOURCE_CXX_OBJ)" >> Makefile &&
+echo "\x09\x09\x24(CXX) \x24(LDFLAGS_FSANITIZE_ADDRESS) \x24(SOURCE_CXX) -o \x24(TARGET)" >> Makefile &&
+echo "\x09\x09\x24(CXX) \x24(LDFLAGS_FSANITIZE_OBJECT) \x24(TARGET)" >> Makefile &&
 echo "\x09\x09mv *.out ./target" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "mem:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
 echo "\x09\x09cp -rf ./src/main.cpp ./." >> Makefile &&
-echo "\x09\x09g++ -fsanitize=address -g3 -std=c++2b main.cpp" >> Makefile &&
-echo "\x09\x09mv *.out ./target" >> Makefile &&
-echo "\x09\x09mv *.cpp ./target" >> Makefile &&
-echo "\x09\x09valgrind --leak-check=full ./target/a.out" >> Makefile &&
+echo "\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_FSANITIZE_VALGRIND) -o \x24(TARGET)" >> Makefile &&
+echo "\x09\x09valgrind --leak-check=full \x24(TARGET)" >> Makefile &&
 echo "" >> Makefile &&
 
 echo "obj:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target" >> Makefile &&
