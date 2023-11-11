@@ -1,3 +1,9 @@
+https://clang.llvm.org/docs/AddressSanitizer.html
+
+https://github.com/google/sanitizers/wiki/AddressSanitizer
+
+<hr>
+
 # Source
 http://gavinchou.github.io/experience/summary/syntax/gcc-address-sanitizer/
 
