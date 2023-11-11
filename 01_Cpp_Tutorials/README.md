@@ -59,3 +59,7 @@ https://modoocode.com/
 # MS\_ cpp header
 
 https://learn.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=msvc-170
+
+# Awesome Modern C++
+
+https://awesomecpp.com/
