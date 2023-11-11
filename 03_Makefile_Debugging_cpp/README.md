@@ -1,3 +1,7 @@
+# Link
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#makefile">Makefile로 이동하기</a>
+- test
+
 # Cpp Makefile(macOS)
 
 https://clang.llvm.org/docs/AddressSanitizer.html
@@ -487,10 +491,12 @@ user@host:~$ xxd-rs dump Cargo.toml
 
 - n 은 \\ 이거 2개 추가 ㅋ
   - https://stackoverflow.com/questions/16904064/end-of-line-new-line-escapes-in-bash
-  - 
 
+<br>
 
-<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore">------echo로 .gitingnore 넣기------ </a>
+<hr>
+
+<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore">echo로 .gitignore 넣기</a>
 
 # Makefile<a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-makefilemacos">[🔝]</a>
 
