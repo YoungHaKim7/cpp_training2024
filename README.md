@@ -17,6 +17,11 @@ set shiftwidth=2
 - https://github.com/YoungHaKim7/cpp_training2024
 - https://github.com/YoungHaKim7/cpp23_project
 
+# C++ Cheat Sheet
+
+- Modern C++ Cheatsheet (C11, C14)
+  - https://github.com/mortennobel/cpp-cheatsheet
+
 <hr>
 
 # C++ vs Rust 변수 용량 비교  범위
