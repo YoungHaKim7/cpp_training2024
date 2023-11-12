@@ -19,8 +19,13 @@ set shiftwidth=2
 
 # C++ Cheat Sheet
 
+- C++ Cheat Sheet(간단하게 보기 좋다)
+  - https://quickref.me/cpp.html
+
 - Modern C++ Cheatsheet (C11, C14)
   - https://github.com/mortennobel/cpp-cheatsheet
+
+
 
 <hr>
 
