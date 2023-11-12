@@ -26,7 +26,9 @@ r:
 zr:
 		rm -rf target
 		mkdir target
-		zig c++ $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		zig c++ $(LINK_OBJ) $(LDFLAGS_COMMON) $(SOURCE_CXX)
+		mv *.o ./target/
+		zig c++ ./target/*.o -o $(TARGET) 
 		$(TARGET)
 
 b:
