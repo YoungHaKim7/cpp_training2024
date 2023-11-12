@@ -27,7 +27,7 @@ echo "LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b" >> Makefil
 
 echo "" >> Makefile &&
 
-echo "r:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09$(CXX_GPP) \x24(LDFLAGS_COMMON) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
+echo "r:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09\x24(CXX_GPP) \x24(LDFLAGS_COMMON) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
 echo "\x09\x09\x24(TARGET)\xa" >> Makefile &&
 
 echo "zr:\xa\x09\x09rm -rf target\xa\x09\x09mkdir target\xa\x09\x09zig c++ \x24(LDFLAGS_COMMON) -o \x24(TARGET) \x24(SOURCE_CXX)" >> Makefile &&
