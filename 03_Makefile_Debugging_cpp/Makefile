@@ -17,7 +17,7 @@ LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b
 r:
 		rm -rf target
 		mkdir target
-		g++ $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
+		$(CXX_GPP) $(LDFLAGS_COMMON) -o $(TARGET) $(SOURCE_CXX)
 		$(TARGET)
 
 zr:
