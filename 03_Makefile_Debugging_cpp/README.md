@@ -137,7 +137,6 @@ echo "\x09\x09echo \x22\x09\x09\x09\\\"type\\\": \\\"cppbuild\\\",\x22 >> .vscod
 echo "\x09\x09echo \x22\x09\x09\x09\\\"label\\\": \\\"C/C++: clang build active file\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"command\\\": \\\"/home/gy/Utilities/llvm16_0_4/bin/g++\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\\\"args\\\": [\x22 >> .vscode/tasks.json" >> Makefile &&
-echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-c\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-fcolor-diagnostics\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-fansi-escape-codes\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
 echo "\x09\x09echo \x22\x09\x09\x09\x09\\\"-g\\\",\x22 >> .vscode/tasks.json" >> Makefile &&
@@ -639,7 +638,6 @@ vscode:
 		echo "			\"label\": \"C/C++: clang build active file\"," >> .vscode/tasks.json
 		echo "			\"command\": \"/home/gy/Utilities/llvm16_0_4/bin/g++\"," >> .vscode/tasks.json
 		echo "			\"args\": [" >> .vscode/tasks.json
-		echo "				\"-c\"," >> .vscode/tasks.json
 		echo "				\"-fcolor-diagnostics\"," >> .vscode/tasks.json
 		echo "				\"-fansi-escape-codes\"," >> .vscode/tasks.json
 		echo "				\"-g\"," >> .vscode/tasks.json
