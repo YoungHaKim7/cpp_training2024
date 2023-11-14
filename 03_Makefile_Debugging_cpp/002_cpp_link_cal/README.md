@@ -21,7 +21,7 @@ CXX_GPP = g++
 
 SOURCE_CXX = ./src/main.cpp
 SOURCE_CXX_OBJ = ./target/main.o
-LINK_OBJ =-c ./src/header/Calculator.h ./src/Calculator/Calculator.cpp
+LINK_OBJ = -c ./src/header/Calculator.h ./src/Calculator/Calculator.cpp
 
 TARGET = ./target/main
 LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -Wall -Wextra -ggdb
