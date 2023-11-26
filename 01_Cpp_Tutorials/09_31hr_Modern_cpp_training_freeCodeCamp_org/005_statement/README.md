@@ -7,6 +7,8 @@ mv *.o ./target/
 $ g++ ./target/*.o -o ./target/main
 ./target/main
 
+
 First number : 3
 Second number : 7
+Sum : 10
 ```

@@ -2,12 +2,15 @@
 
 
 int main(int argc, char **argv) {
-	int firstNumber = {3}; // Statement
-	int secondNumber = {7};
+	int first_number = {3}; // Statement
+	int second_number = {7};
 
 
-	std::cout << "First number : " << firstNumber << '\n';
-	std::cout << "Second number : " << secondNumber << '\n';
+	std::cout << "First number : " << first_number << '\n';
+	std::cout << "Second number : " << second_number << '\n';
+
+	int sum = first_number + second_number;
+	std::cout << "Sum : " << sum << '\n';
 
 	return 0;
 }
