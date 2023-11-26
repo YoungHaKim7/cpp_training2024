@@ -20,6 +20,34 @@ https://en.cppreference.com/w/
 
 <hr>
 
+# stream
+
+<table border="1">
+    <tr>
+    <td colspan="2" align="center">Stream</td>
+    </tr>
+    <tr align="center">
+        <td>stream</td>
+        <td>Purpose</td>
+    </tr>
+    <tr align="center">
+        <td>std::cout</td>
+        <td>Printing data to the console(terminal)</td>
+    </tr>
+    <tr align="center">
+        <td>std::cin</td>
+        <td>Reading data from the terminal</td>
+    </tr>
+    <tr align="center">
+        <td>std::cerr</td>
+        <td>Printing errors to the console</td>
+    </tr>
+    <tr align="center">
+        <td>std::clog</td>
+        <td>Printing log messages to the console</td>
+    </tr>
+</table>
+
 # MS에서 제공하는 Tutorial역시 마소 최고
 
 https://learn.microsoft.com/en-us/cpp/?view=msvc-170
