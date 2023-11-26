@@ -11,4 +11,5 @@ $ g++ ./target/*.o -o ./target/main
 First number : 3
 Second number : 7
 Sum : 10
+Sum : 32
 ```
