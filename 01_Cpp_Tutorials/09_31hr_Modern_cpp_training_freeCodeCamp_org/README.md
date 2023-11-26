@@ -1,3 +1,5 @@
+- 2:34:17 부터 보면 됨
+
 # 31(hr) C++ Programming Course - Beginner to Advanced | freeCodeCamp.org
 
 - Learn modern C++ 20 programming in this comprehensive course.
