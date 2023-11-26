@@ -171,3 +171,20 @@ vscode:
 		echo "}" >> .vscode/tasks.json
 
 ```
+
+# basic 
+
+- Statements are executed in order from top to bottom when the program is run
+  - 프로그램 실행 시 문이 위에서 아래로 순서대로 실행됩니다
+- Execution keeps going until there a statement causing the program to terminate, or run another sequence of statements
+  - 프로그램이 종료되거나 다른 일련의 문을 실행하는 문이 있을 때까지 실행이 계속됩니다
+
+```cpp
+// return type
+// |
+int addNumbers(int first_number, int second_number) 
+//        |  								|
+//   function name          |
+//                      parameters
+ 	
+```

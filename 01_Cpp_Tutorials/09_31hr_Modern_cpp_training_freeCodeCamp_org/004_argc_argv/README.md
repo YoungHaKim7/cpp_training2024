@@ -7,7 +7,6 @@ mv *.o ./target/
 $ g++ ./target/*.o -o ./target/main
 ./target/main
 
-
-The sum of the two numbers is : 21
-
+The sum of the two numbers is : 41
+The sum of the two numbers is : 31
 ```
