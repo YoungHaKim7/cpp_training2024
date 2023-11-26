@@ -183,7 +183,7 @@ vscode:
 // return type
 // |
 int addNumbers(int first_number, int second_number) 
-//        |  								|
+//        |  				|
 //   function name          |
 //                      parameters
  	
