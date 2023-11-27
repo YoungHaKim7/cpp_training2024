@@ -1,4 +1,4 @@
-- 2:34:17 부터 보면 됨
+- 2:37:00 부터 보면 됨
 
 # 31(hr) C++ Programming Course - Beginner to Advanced | freeCodeCamp.org
 
