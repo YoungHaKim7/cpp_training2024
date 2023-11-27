@@ -121,8 +121,8 @@ https://awesomecpp.com/
 
 - 안드로이드NDK 기초 강의 몰아보기 #3 - 이거 하나면 끝!!! Android NDK Basics tutorial | chaems
   - https://youtu.be/mO06EwrWC04?si=q1j7dJtY3Y_dwTK0
-- 4
-
+- 안드로이드NDK 기초 강의🎁 몰아보기 #4 - 이거 하나면 끝!!! Android NDK Basics tutorial | chaems
+  - https://youtu.be/V01lAEptkNg?si=7z-26HfS5uVyXdkt
 - ❤안드로이드NDK 기초 강의💙 몰아보기 #5 - 이거 하나면 끝!!! Android NDK Basics tutorial | chaems
   - cpp로 안드로이드 만드네 ㅎㅎ
     - https://youtu.be/JW340AGgMHY?si=awQzJi5tbiJBsYjk
