@@ -31,11 +31,54 @@ https://en.cppreference.com/w/
 // return type
 // |
 int addNumbers(int first_number, int second_number) 
-//        |  		|
-//   function name          |
+//        |  		     |
+//   function name       |
 //                      parameters
  	
 ```
+
+# Generalization
+
+
+<table border="1">
+    <tr>
+    <td colspan="2" align="center">Generalization</td>
+    </tr>
+    <tr align="center">
+        <td>Digits</td>
+        <td>Data Range</td>
+    </tr>
+    <tr align="center">
+        <td>1</td>
+        <td>0 ~ 1</td>
+    </tr>
+    <tr align="center">
+        <td>2</td>
+        <td>0 ~ 3</td>
+    </tr>
+    <tr align="center">
+        <td>3</td>
+        <td>0 ~ 7</td>
+    </tr>
+    <tr align="center">
+        <td>4</td>
+        <td>0 ~ 15</td>
+    </tr>
+    <tr align="center">
+        <td>5</td>
+        <td>0 ~ 31</td>
+    </tr>
+    <tr align="center">
+        <td>...</td>
+        <td>...</td>
+    </tr>
+    <tr align="center">
+        <td>n</td>
+        <td>0 ~ 2^n-1</td>
+    </tr>
+</table>
+
+- $2^n-1$
 
 # stream
 
