@@ -4,11 +4,12 @@ https://changkun.de/modern-cpp/en-us/00-preface/
 
 # Modern C++
 - https://github.com/federico-busato/Modern-CPP-Programming
-- https://news.hada.io/topic?id=12073&utm_source=discord&utm_medium=bot&utm_campaign=1480
+
 
 <hr>
 
--▲ GN⁺: Modern C++ 프로그래밍 강좌 (github.com/federico-busato)
+# ▲ GN⁺: Modern C++ 프로그래밍 강좌 (github.com/federico-busato)
+- https://news.hada.io/topic?id=12073&utm_source=discord&utm_medium=bot&utm_campaign=1480
 - 이 과정은 이미 C와 객체 지향 프로그래밍에 익숙한 사람들을 대상으로 하며, C++ 프로그래밍의 숙련도를 높이는 데 목적이 있음
   - C++ 프로그래밍의 기본부터 고급 C++ 의미론 및 개념에 이르기까지 다룸
   - 무료이며 자주 업데이트되고, 최신 언어 표준의 개념과 기능을 포함하며, 실용적인 교육 방식을 채택
