@@ -1,6 +1,7 @@
 # Link
 - <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#makefile">Makefile로 이동하기</a>
 - <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp#cpp-gitignore-">echo로 .gitignore 넣기 이동</a>
+- <a href="https://github.com/YoungHaKim7/cpp_training2024/tree/main/03_Makefile_Debugging_cpp/002_cpp_link_cal#makefile-%EC%97%AC%EB%9F%AC-%EA%B0%80%EC%A7%80-%ED%8C%8C%EC%9D%BC--c-%EB%AC%B6%EC%96%B4%EC%A3%BC%EA%B8%B0">여러개 파일 -c로 묶어서 컴파일 하기</a>
 
 # Cpp Makefile(macOS)
 
