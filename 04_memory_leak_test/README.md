@@ -192,11 +192,15 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 
 # ```g++ -fsanitize=address -g3 -std=c++2b main.cpp```
 
+- ```g++ -fsanitize=address -g3 -std=c++2b main.cpp```
+- ```valgrind --leak-check=full ./out/a.out```
+- 
 ```bash
 
-g++ -fsanitize=address -g3 -std=c++2b main.cpp
+$ g++ -fsanitize=address -g3 -std=c++2b main.cpp
 
-valgrind --leak-check=full ./out/a.out
+$ valgrind --leak-check=full ./out/a.out
+
 ==52948== Memcheck, a memory error detector
 ==52948== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==52948== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
