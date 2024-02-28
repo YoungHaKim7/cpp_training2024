@@ -445,7 +445,7 @@ Training
 ```
 #!/bin/bash
 
-g++ -std=c++2a main.pp
+g++ -std=c++2a main.cpp
 ```
 
 <br>
