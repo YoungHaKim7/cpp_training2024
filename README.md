@@ -39,7 +39,7 @@ https://godbolt.org/
 
 <table border="1">
     <tr>
-    <td colspan="5" align="center">Rust tutorial</td>
+    <td colspan="5" align="center">Rust vs  C   Sizeof</td>
     </tr>
     <tr align="center">
         <td>Rust</td>
