@@ -10,6 +10,7 @@
   - [clang -std옵션 넣는 패턴 c++14 17, 20, 23](#c-support-in-clang)
 - [구글의-c-가이드-라인](#구글의-c-가이드-라인)
   - [(Bjarne Stroustrup)C++가이드라인C++ Core Guidelines - edt.: Bjarne Stroustrup, Herb Sutter](#cpp--bjarne-stroustrup)
+- [C/C++ Cheat-Sheet](#c-cheat-sheet)
 
 <hr>
 
