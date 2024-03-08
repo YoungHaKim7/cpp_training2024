@@ -20,7 +20,7 @@
 
 
 - Tutorial(C/C++)
-  - [cppman(문서보기) & Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
+  - [cppman(문서보기) & & c98부터 c++26까지 나온 기능들 잘 정리됨 & Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
     - [C++디자인 패턴Design-pattern](#c-design-patterns-from-c03-to-c17---fedor-pikus---cppcon-2019) 
   - [useful-resources--cppreference](#useful-resources--cppreference)
 
@@ -336,6 +336,9 @@ $ pip install cppman
 - Demo
 
 <img src="https://camo.githubusercontent.com/8f37711d2918fb70895895bcabb3fdd76836ab94a6ee4318f669f820eafc704f/68747470733a2f2f7261772e6769746875622e636f6d2f6169746a63697a652f6370706d616e2f6d61737465722f77696b692f64656d6f2e676966" />
+
+- c98부터 c++26까지 나온 기능들 잘 정리됨
+  - https://clang.llvm.org/cxx_status.html#cxx26
 
 # Cpp : Bjarne Stroustrup[[🔝]](#link)
 
