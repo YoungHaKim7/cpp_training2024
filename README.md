@@ -11,7 +11,7 @@
 - [구글의-c-가이드-라인](#구글의-c-가이드-라인)
   - [(Bjarne Stroustrup)C++가이드라인C++ Core Guidelines - edt.: Bjarne Stroustrup, Herb Sutter](#cpp--bjarne-stroustrup)
 - [C/C++ Cheat-Sheet](#c-cheat-sheet)
-
+- [c-vs-rust-변수-용량-비교--범위](#c-vs-rust-변수-용량-비교--범위)
 <hr>
 
 # vim tab setting[[🔝]](#link)
