@@ -21,7 +21,8 @@
 
 - Tutorial(C/C++)
   - [cppman(문서보기) & & c98부터 c++26까지 나온 기능들 잘 정리됨 & Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
-    - [C++디자인 패턴Design-pattern](#c-design-patterns-from-c03-to-c17---fedor-pikus---cppcon-2019) 
+    - [C++디자인 패턴Design-pattern](#c-design-patterns-from-c03-to-c17---fedor-pikus---cppcon-2019)
+  - [마소microsoft-설명서](#microsoft-설명서)
   - [useful-resources--cppreference](#useful-resources--cppreference)
 
 <hr>
