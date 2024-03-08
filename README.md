@@ -15,6 +15,7 @@
 
 - Tutorial(C/C++)
   - [Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
+    - [C++디자인 패턴Design-pattern](#c-design-patterns-from-c03-to-c17---fedor-pikus---cppcon-2019) 
 
 <hr>
 
