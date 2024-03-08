@@ -11,6 +11,10 @@
 - [구글의-c-가이드-라인](#구글의-c-가이드-라인)
   - [(Bjarne Stroustrup)C++가이드라인C++ Core Guidelines - edt.: Bjarne Stroustrup, Herb Sutter](#cpp--bjarne-stroustrup)
 - [C/C++ Cheat-Sheet](#c-cheat-sheet)
+- [c-라이브러리-찾는곳](#c-라이브러리-찾는곳)
+
+<hr>
+
 - [c-vs-rust-변수-용량-비교--범위](#c-vs-rust-변수-용량-비교--범위)
 <hr>
 
@@ -23,18 +27,18 @@ set shiftwidth=2
 
 <hr>
 
-# Assembly Code로 공부하기  넘 좋다.
+# Assembly Code로 공부하기  넘 좋다.[[🔝]](#link)
 
 https://godbolt.org/
 
 <hr>
 
-# 내가 정리하는 github
+# 내가 정리하는 github[[🔝]](#link)
 
 - https://github.com/YoungHaKim7/cpp_training2024
 - https://github.com/YoungHaKim7/cpp23_project
 
-# C++ Cheat Sheet
+# C++ Cheat Sheet[[🔝]](#link)
 
 - C++ Cheat Sheet(간단하게 보기 좋다)
   - https://quickref.me/cpp.html
@@ -46,7 +50,7 @@ https://godbolt.org/
 
 <hr>
 
-# C++ vs Rust 변수 용량 비교  범위
+# C++ vs Rust 변수 용량 비교  범위[[🔝]](#link)
 
 <table border="1">
     <tr>
@@ -262,56 +266,56 @@ https://www.shellscript.sh/
 
 <hr>
 
-# C++ 라이브러리 찾는곳
+# C++ 라이브러리 찾는곳[[🔝]](#link)
 
 https://en.cppreference.com/w/cpp/links/libs
 
-- C++질문하고 답해주는 좋은 곳
+- C++질문하고 답해주는 좋은 곳[[🔝]](#link)
   - https://cplusplus.com/forum/beginner/
 
 
-# Generators, Coroutines and Other Brain Unrolling Sweetness - Adi Shavit - CppCon 2019
+# Generators, Coroutines and Other Brain Unrolling Sweetness - Adi Shavit - CppCon 2019[[🔝]](#link)
 
 https://youtu.be/qYHDERleSL8?si=iyod9wk7aMVcnk0r
 
-# coroutines(c++)
+# coroutines(c++)[[🔝]](#link)
 
 https://gcc.gnu.org/wiki/cxx-coroutines
 
 <hr>
 
-# C++ Design Patterns: From C++03 to C++17 - Fedor Pikus - CppCon 2019
+# C++ Design Patterns: From C++03 to C++17 - Fedor Pikus - CppCon 2019[[🔝]](#link)
 
 https://youtu.be/MdtYi0vvct0
 
-# Reflect *this!: Design and Implementation of a Mixin Library with Static Reflection - Andy Soffer
+# Reflect *this!: Design and Implementation of a Mixin Library with Static Reflection - Andy Soffer[[🔝]](#link)
 
 https://youtu.be/kFChd-RrSP8
 
 <hr>
 
-# 구글 differential-privacy
+# 구글 differential-privacy[[🔝]](#link)
 
 - Google's differential privacy libraries.
 
   - https://github.com/google/differential-privacy
 
 
-# Microsoft C++, C, and Assembler documentation
+# Microsoft C++, C, and Assembler documentation[[🔝]](#link)
 
 - Learn how to use C++, C, and assembly language to develop applications, services, and tools for your platforms and devices.
 
 https://learn.microsoft.com/en-us/cpp/?view=msvc-170
 
-# Useful resources | cppreference
+# Useful resources | cppreference[[🔝]](#link)
 
 https://en.cppreference.com/w/cpp/links
 
-# C++ 98/11/14 manual pages for Linux/MacOS 
+# C++ 98/11/14 manual pages for Linux/MacOS [[🔝]](#link)
 
 https://github.com/aitjcize/cppman
 
-# Cpp : Bjarne Stroustrup
+# Cpp : Bjarne Stroustrup[[🔝]](#link)
 
   - C++ Core Guidelines - edt.: Bjarne Stroustrup, Herb Sutter
 
@@ -321,11 +325,11 @@ https://github.com/aitjcize/cppman
   
     - https://www.stroustrup.com/JSF-AV-rules.pdf
 
-# Learning C++ eBook - Compiled from StackOverflow Documentation (PDF)
+# Learning C++ eBook - Compiled from StackOverflow Documentation (PDF)[[🔝]](#link)
 
 https://riptutorial.com/Download/cplusplus.pdf
 
-# C++.com
+# C++.com[[🔝]](#link)
 
 https://cplusplus.com/doc/tutorial/
 
@@ -333,7 +337,7 @@ https://cplusplus.com/doc/tutorial/
 
 <hr>
 
-# Compilers
+# Compilers[[🔝]](#link)
 
 Use every available and reasonable set of warning options. Some warning options only work with optimizations enabled, or work better the higher the chosen level of optimization is, for example 
 ```-Wnull-dereference```
@@ -341,7 +345,7 @@ Use every available and reasonable set of warning options. Some warning options 
 
 You should use as many compilers as you can for your platform(s). Each compiler implements the standard slightly differently and supporting multiple will help ensure the most portable, most reliable code.
 
-# GCC / Clang
+# GCC / Clang[[🔝]](#link)
 ```-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic``` 
 - use these and consider the following (see descriptions below)
 
@@ -397,7 +401,7 @@ https://github.com/cpp-best-practices/cppbestpractices/blob/master/02-Use_the_To
 
 <hr>
 
-# C++ Support in Clang
+# C++ Support in Clang[[🔝]](#link)
 
 - Clang implements the following published and upcoming ISO C++ standards:
 - https://clang.llvm.org/cxx_status.html
@@ -417,25 +421,24 @@ https://github.com/cpp-best-practices/cppbestpractices/blob/master/02-Use_the_To
 
 <br>
 
-# C++ Concurrency vs Parallelism ~~~~~~~~~~
+# C++ Concurrency vs Parallelism ~~~[[🔝]](#link)
 
 - CppCon 2017: Fedor Pikus “C++ atomics, from basic to advanced. What do they really do?”
   - https://youtu.be/ZQFzMfHIxng
 
-# C++ Tutorial ~~~~~~~~~~~~~~~~~~~~~~~
-
+# C++ Tutorial ~~[[🔝]](#link)
 - C++ From Scratch | CoffeeBeforeArch
   - https://youtube.com/playlist?list=PLxNPSjHT5qvvIGGhRnFOGA4CbX1oTrt6z
 
-# 국내 C++ 무료 강좌 (모두의 C++) 
+# 국내 C++ 무료 강좌 (모두의 C++) [[🔝]](#link)
 
 https://modoocode.com/135
 
-# 구글의 C++ 가이드 라인
+# 구글의 C++ 가이드 라인[[🔝]](#link)
 
 https://google.github.io/styleguide/cppguide.html
 
-# MicroSoft 설명서
+# MicroSoft 설명서[[🔝]](#link)
 
 - https://learn.microsoft.com/en-us/training/
 
@@ -445,7 +448,7 @@ https://learn.microsoft.com/ko-kr/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=ms
 
   - https://learn.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170
 
-# Cpp_Training
+# Cpp_Training[[🔝]](#link)
 
 Training
 
@@ -467,7 +470,7 @@ Training
 
 <br>
 
-# c20 compile
+# c20 compile[[🔝]](#link)
 
 - build.sh
 
@@ -511,7 +514,7 @@ g++ -std=c++20
  
 ```
 
-# cpp 17 compile & debug
+# cpp 17 compile & debug[[🔝]](#link)
 
 ```
 $ g++ -Wall -Wextra -std=c++17 main.cpp -o main
@@ -536,23 +539,23 @@ https://youtu.be/YzIBwqWC6EM
 
 <br>
 
-# c++ algorithm study
+# c++ algorithm study[[🔝]](#link)
 
 https://github.com/jungeu1509/Algorithm_study
 
 
-# Awesome modern c++
+# Awesome modern c++[[🔝]](#link)
 
 https://github.com/rigtorp/awesome-modern-cpp
 
-# C++20
+# C++20[[🔝]](#link)
 
 https://itnext.io/c-20-coroutines-complete-guide-7c3fc08db89d?gi=b495cc70f832
 
 https://github.com/HappyCerberus/article-cpp20-coroutines
 
 
-# C++❤ A modern formatting library
+# C++❤ A modern formatting library[[🔝]](#link)
 
 https://github.com/fmtlib/fmt
 
