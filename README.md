@@ -393,7 +393,7 @@ https://github.com/cpp-best-practices/cppbestpractices/blob/master/02-Use_the_To
 
 |Language Standard |	Flag |	Available in Clang? |
 |-|-|-|
-|C++2c|	-std=c++2c | Partial|
+|[C++2c](https://clang.llvm.org/cxx_status.html#cxx26)|	-std=c++2c | Partial|
 |C++23|	-std=c++23|	Partial|
 |C++20|	-std=c++20|	Partial|
 |C++17|	-std=c++17|	Clang 5|
