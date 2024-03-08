@@ -13,8 +13,8 @@
 - [C/C++ Cheat-Sheet](#c-cheat-sheet)
 - [c-라이브러리-찾는곳](#c-라이브러리-찾는곳)
 
-- Tutorial
-- [Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
+- Tutorial(C/C++)
+  - [Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
 
 <hr>
 
