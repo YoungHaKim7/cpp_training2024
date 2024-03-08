@@ -7,7 +7,7 @@
 # link
 
 - [gcc/clang 옵션 활용법](#compilers)
-  - [clang -std옵션 넣는 패턴 c++14 17, 20, 23](c-support-in-clang)
+  - [clang -std옵션 넣는 패턴 c++14 17, 20, 23](#c-support-in-clang)
 
 
 <hr>
