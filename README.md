@@ -393,13 +393,13 @@ https://github.com/cpp-best-practices/cppbestpractices/blob/master/02-Use_the_To
 
 |Language Standard |	Flag |	Available in Clang? |
 |-|-|-|
-|C++2c|	-std=c++2c | Partial
-C++23	-std=c++23	Partial
-C++20	-std=c++20	Partial
-C++17	-std=c++17	Clang 5
-C++14	-std=c++14	Clang 3.4
-C++11	-std=c++11	Clang 3.3
-C++98 / C++03	-std=c++98	Yes (other than export)
+|C++2c|	-std=c++2c | Partial|
+|C++23|	-std=c++23|	Partial|
+|C++20|	-std=c++20|	Partial|
+|C++17|	-std=c++17|	Clang 5|
+|C++14|	-std=c++14|	Clang 3.4|
+|C++11|	-std=c++11|	Clang 3.3|
+|C++98/C++03	|-std=c++98|	Yes (other than export)|
 
 
 <hr>
