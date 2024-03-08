@@ -13,7 +13,7 @@
 
 <hr>
 
-# vim tab setting
+# vim tab setting[[🔝]](#link)
 
 ```
 set tabstop=2
