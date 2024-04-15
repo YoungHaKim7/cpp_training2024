@@ -22,7 +22,6 @@
   - modern C++ (C++11,14,17,20,23, etc.)
     - https://youtube.com/playlist?list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&si=yihPgZSNZIWAxW8S 
 
-https://youtube.com/playlist?list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&si=yihPgZSNZIWAxW8S
 
 - Tutorial(C/C++)
   - [cppman(문서보기) & & c98부터 c++26까지 나온 기능들 잘 정리됨 & Doc c-981114-manual-pages-for-linuxmacos- ](#c-981114-manual-pages-for-linuxmacos-)
