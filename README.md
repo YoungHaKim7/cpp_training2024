@@ -20,7 +20,9 @@
 
 - (Modern C++시리즈) 이분이 최고 The C++ Programming Language | Mike Shah
   - modern C++ (C++11,14,17,20,23, etc.)
-    - https://youtube.com/playlist?list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&si=yihPgZSNZIWAxW8S 
+    - https://youtube.com/playlist?list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L&si=yihPgZSNZIWAxW8S
+      - (다른사람) C++ 게시자: The Cherno
+        - https://youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&si=FpQAPS-C-IVfU1em
 
 
 - Tutorial(C/C++)
