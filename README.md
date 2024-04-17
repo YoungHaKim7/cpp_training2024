@@ -30,7 +30,7 @@
     - [C++디자인 패턴Design-pattern](#c-design-patterns-from-c03-to-c17---fedor-pikus---cppcon-2019)
   - [마소microsoft-설명서](#microsoft-설명서)
   - [useful-resources--cppreference](#useful-resources--cppreference)
-  - [www.cplusplus.com/doc/tutorial](www.cplusplus.com/doc/tutorial/)
+  - [www.cplusplus.com/doc/tutorial](https://cplusplus.com/doc/)
 
 <hr>
 
