@@ -1,3 +1,9 @@
+# C++ FullCourse(C, 알고리즘까지 굿)
+- Full Courses | Bro Code
+  - https://youtube.com/playlist?list=PLZPZq0r_RZON03iKBjYOsOKr1-TD7z2lH&si=93uCPrJ9SPXes2Jt
+
+<hr>
+
 # MS
 
 - Mutex https://learn.microsoft.com/ko-kr/cpp/standard-library/mutex?view=msvc-170
