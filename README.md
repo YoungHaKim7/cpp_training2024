@@ -594,4 +594,27 @@ https://github.com/HappyCerberus/article-cpp20-coroutines
 https://github.com/fmtlib/fmt
 
 
+<hr> 
+
+# - Visual C++ CRT 오류 -
+
+1. VS에서 scanf, strcpy를 썼을 때 오류가 난다면 맨 위에 #define _CRT_SECURE_NO_WARNINGS를 붙여주세요.
+
+2. #define _CRT_SECURE_NO_WARNINGS는 #include보다 위에 놓아야 합니다.
+
+3. scanf_s에서 %c 또는 %s를 쓸 땐 주소가 가리키는 영역에 할당된 크기를 추가로 넣어야 합니다. 예) scanf_s("%s %c", &s, sizeof s, &c, sizeof c);
+
+# 추천 공부 자료 -
+
+C++: https://modoocode.com/135
+
+C++: https://en.cppreference.com (영어)
+
+C: https://modoocode.com/231
+
+C#: https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp (영어; 한국어 번역은 기계번역, 퀄리티 낮음)
+
+Rust: https://doc.rust-lang.org/book (영어)
+
+더 나은 한국어 자료를 알고 계신다면 언제든지 방장에게 알려주세요. 내용이 충분히 정확하면서 학습자의 학습을 방해하지 않는 좋은 문장력을 갖춘 자료를 찾고 있습니다. 위 항목 외에도 유니티, 언리얼, 그래픽스 등에 관련된 위 목록에 꼭 들어갔으면 좋겠다고 생각하시는 자료가 있다면 언제든지 알려주세요.
 
