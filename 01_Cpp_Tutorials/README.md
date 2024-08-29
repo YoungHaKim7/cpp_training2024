@@ -170,6 +170,8 @@ https://learn.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=msvc-170
 
 https://awesomecpp.com/
 
+# C++ 10hr 쉬운거
+- https://youtu.be/_bYFu9mBnr4?si=uA9k_cnHcarWBYnI
 
 <hr>
 
