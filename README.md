@@ -14,6 +14,12 @@
 - [c-라이브러리-찾는곳](#c-라이브러리-찾는곳)
 - [ASCII아스키 table](https://cplusplus.com/doc/ascii/)
 
+<hr />
+
+- C++ Standard Library 구현하는거 자세히 설명한 영상241210
+  - [(241210)How To Implement the C++ Standard Library - (Part 1 of 2) - Christopher Di Bella - C++ on Sea 2024 | cpponsea](https://youtu.be/FgfJhKik_jY?si=ARg6YWqBqRlsDTOX)
+  - [How to Implement the C++ Standard Library (Part 2): An Excursion into libc++ - Christopher Di Bella | cpponsea](https://youtu.be/xS1gI0K7tWk?si=jpbm_6Zb2CbVhEUU)
+
 <hr>
 
 - 병렬 & 동시성 
