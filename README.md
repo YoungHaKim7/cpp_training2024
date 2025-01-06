@@ -624,3 +624,24 @@ Rust: https://doc.rust-lang.org/book (영어)
 
 더 나은 한국어 자료를 알고 계신다면 언제든지 방장에게 알려주세요. 내용이 충분히 정확하면서 학습자의 학습을 방해하지 않는 좋은 문장력을 갖춘 자료를 찾고 있습니다. 위 항목 외에도 유니티, 언리얼, 그래픽스 등에 관련된 위 목록에 꼭 들어갔으면 좋겠다고 생각하시는 자료가 있다면 언제든지 알려주세요.
 
+
+<hr />
+
+# C++/C++ 기초 [C++] 연산자 총 정리 (Operator)[|🔝|](#link)
+C++ 은 여러 종류의 연산을 위해 다양한 연산자(operator) 을 제공합니다. C++ 의 연산자를 총 정리하는 포스팅입니다.
+ 
+
+- 1. 산술 연산자(arithmetic operator)
+- 2. 대입 연산자(assignment operator)
+- 3. 증감 연산자(increment and decrement operator)
+- 4. 비교 연산자(comparison operator)
+- 5. 논리 연산자(logical operator)
+- 6. 비트 연산자(bitwise operator)
+- 7. 삼항 연산자
+- 8. sizeof 연산자
+- 9. 범위 지정 연산자(scope resolution operator)
+- 10. 멤버 포인터 연산자(pointer-to-member operator)
+- 11. typeid 연산자
+  연산자의 우선순위(operator precedence)와 
+- 12. 결합 방향(associativity)
+- 출처: https://songsite123.tistory.com/8 [Song 컴퓨터공학:티스토리]
