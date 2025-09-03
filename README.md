@@ -42,6 +42,7 @@
 <hr>
 
 - [c-vs-rust-변수-용량-비교--범위](#c-vs-rust-변수-용량-비교--범위)
+  - [C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거]()
 
 <hr>
 
@@ -88,6 +89,8 @@ https://godbolt.org/
 <hr>
 
 # C++ vs Rust 변수 용량 비교  범위[[🔝]](#link)
+
+- [C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거]()
 
 <table border="1">
     <tr>
@@ -296,6 +299,34 @@ https://godbolt.org/
 - The range of enumerated types varies depending on the language context and specified compiler flags. For more information, see C Enumeration Declarations and Enumerations.
 
 https://learn.microsoft.com/en-us/cpp/cpp/data-type-ranges?view=msvc-170
+
+# C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거)[|🔝|](#link)
+
+- https://cplusplus.com/doc/tutorial/variables/
+
+<table class="boxed">
+<tr><th>Group</th><th>Type names*</th><th>Notes on size / precision</th></tr>
+<tr><td rowspan="4">Character types</td><td><code><b>char</b></code></td><td>Exactly one byte in size. At least 8 bits.</td></tr>
+<tr><td><code><b>char16_t</b></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+<tr><td><code><b>char32_t</b></code></td><td>Not smaller than <code>char16_t</code>. At least 32 bits.</td></tr>
+<tr><td><code><b>wchar_t</b></code></td><td>Can represent the largest supported character set.</td></tr>
+<tr><td rowspan="5">Integer types (signed)</td><td><code><b>signed char</b></code></td><td>Same size as <code>char</code>. At least 8 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>short</b> <i>int</i></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>int</b></code></td><td>Not smaller than <code>short</code>. At least 16 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>long</b> <i>int</i></code></td><td>Not smaller than <code>int</code>. At least 32 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>long long</b> <i>int</i></code></td><td>Not smaller than <code>long</code>. At least 64 bits.</td></tr>
+<tr><td rowspan="5">Integer types (unsigned)</td><td><code><b>unsigned char</b></code></td><td rowspan="5">(same size as their signed counterparts)</td></tr>
+<tr><td><code><b>unsigned short</b> <i>int</i></code></td></tr>
+<tr><td><code><b>unsigned</b> <i>int</i></code></td></tr>
+<tr><td><code><b>unsigned long</b> <i>int</i></code></td></tr>
+<tr><td><code><b>unsigned long long</b> <i>int</i></code></td></tr>
+<tr><td rowspan="3">Floating-point types</td><td><code><b>float</b></code></td><td></td></tr>
+<tr><td><code><b>double</b></code></td><td>Precision not less than <code>float</code></td></tr>
+<tr><td><code><b>long double</b></code></td><td>Precision not less than <code>double</code></td></tr>
+<tr><td>Boolean type</td><td><code><b>bool</b></code></td><td></td></tr>
+<tr><td>Void type</td><td><code><b>void</b></code></td><td>no storage</td></tr>
+<tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
+</table>
 
 # 코딩의 근본 shellscript
 
@@ -655,3 +686,4 @@ C++ 은 여러 종류의 연산을 위해 다양한 연산자(operator) 을 제�
   연산자의 우선순위(operator precedence)와 
 - 12. 결합 방향(associativity)
 - 출처: https://songsite123.tistory.com/8 [Song 컴퓨터공학:티스토리]
+
