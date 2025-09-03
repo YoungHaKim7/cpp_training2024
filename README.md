@@ -42,7 +42,7 @@
 <hr>
 
 - [c-vs-rust-변수-용량-비교--범위](#c-vs-rust-변수-용량-비교--범위)
-  - [C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거]()
+  - [C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거](#c의-헷갈리는-예약어-정리char16_t-wchar_t-이런거)
 
 <hr>
 
@@ -90,7 +90,7 @@ https://godbolt.org/
 
 # C++ vs Rust 변수 용량 비교  범위[[🔝]](#link)
 
-- [C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거]()
+- [C의 헷갈리는 예약어 정리(`char16_t` `wchar_t` 이런거](#c의-헷갈리는-예약어-정리char16_t-wchar_t-이런거)
 
 <table border="1">
     <tr>
@@ -686,4 +686,5 @@ C++ 은 여러 종류의 연산을 위해 다양한 연산자(operator) 을 제�
   연산자의 우선순위(operator precedence)와 
 - 12. 결합 방향(associativity)
 - 출처: https://songsite123.tistory.com/8 [Song 컴퓨터공학:티스토리]
+
 
