@@ -2,7 +2,12 @@
 - Full Courses | Bro Code
   - https://youtube.com/playlist?list=PLZPZq0r_RZON03iKBjYOsOKr1-TD7z2lH&si=93uCPrJ9SPXes2Jt
 
-<hr>
+<hr />
+
+# 쉽고 좋다.(C/C++교재) 완전 쉬운거
+- https://learn.onlinegdb.com/
+
+<hr />
 
 # MS
 
