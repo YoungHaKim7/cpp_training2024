@@ -1,3 +1,10 @@
+- C++
+  - [온라인으로 디버깅 된다. 완전 최고..https://www.onlinegdb.com/online_c++_debugger](https://www.onlinegdb.com/online_c++_debugger)
+
+# 여기에 다 정리중.
+- https://github.com/YoungHaKim7/cpp26_pthread_cmake_just_sample
+
+
 # .vscode
 
 - launch.json
