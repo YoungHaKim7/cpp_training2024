@@ -56,6 +56,22 @@
 
 <hr />
 
+
+# 여기에 다 정리중.(C23 & C++14 / 23/ 26)
+
+- C언어
+  - https://github.com/YoungHaKim7/c_project
+  - C23(build + cmake)
+    - https://github.com/YoungHaKim7/c23_pthread_cmake_just_sample
+
+- C++
+  - C++98/03/11/14/17/20
+    - https://github.com/YoungHaKim7/cpp_training2024
+  - C++23/26/29
+    - https://github.com/YoungHaKim7/cpp23_26_project
+    - 빌드 & cmake
+      - https://github.com/YoungHaKim7/cpp26_pthread_cmake_just_sample
+
 # C++23, 26 ~ 여기에 정리중..
 - https://github.com/YoungHaKim7/cpp23_26_project
 
@@ -691,6 +707,7 @@ C++ 은 여러 종류의 연산을 위해 다양한 연산자(operator) 을 제�
   연산자의 우선순위(operator precedence)와 
 - 12. 결합 방향(associativity)
 - 출처: https://songsite123.tistory.com/8 [Song 컴퓨터공학:티스토리]
+
 
 
 
