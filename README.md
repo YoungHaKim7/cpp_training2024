@@ -666,11 +666,16 @@ https://github.com/fmtlib/fmt
 
 # - Visual C++ CRT 오류 -
 
-1. VS에서 scanf, strcpy를 썼을 때 오류가 난다면 맨 위에 #define _CRT_SECURE_NO_WARNINGS를 붙여주세요.
+1. VS에서 scanf, strcpy를 썼을 때 오류가 난다면 맨 위에 `#define _CRT_SECURE_NO_WARNINGS`를 붙여주세요.
 
-2. #define _CRT_SECURE_NO_WARNINGS는 #include보다 위에 놓아야 합니다.
+2. `#define _CRT_SECURE_NO_WARNINGS`는 `#include`보다 위에 놓아야 합니다.
 
-3. scanf_s에서 %c 또는 %s를 쓸 땐 주소가 가리키는 영역에 할당된 크기를 추가로 넣어야 합니다. 예) scanf_s("%s %c", &s, sizeof s, &c, sizeof c);
+3. `scanf_s`에서 `%c` 또는 `%s`를 쓸 땐 주소가 가리키는 영역에 할당된 크기를 추가로 넣어야 합니다.
+- 예)
+
+```cpp
+scanf_s("%s %c", &s, sizeof s, &c, sizeof c);
+```
 
 # 추천 공부 자료 -
 
@@ -707,6 +712,7 @@ C++ 은 여러 종류의 연산을 위해 다양한 연산자(operator) 을 제�
   연산자의 우선순위(operator precedence)와 
 - 12. 결합 방향(associativity)
 - 출처: https://songsite123.tistory.com/8 [Song 컴퓨터공학:티스토리]
+
 
 
 
